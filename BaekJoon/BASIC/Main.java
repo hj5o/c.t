@@ -1,5 +1,7 @@
 package BaekJoon.BASIC;
 
+// 과제 골드바흐의 추측 6588
+
 ////      1929 소수 구하기
 //import java.util.*;
 //
