@@ -1,5 +1,5 @@
 package BaekJoon.BASIC;
-
+//
 //// 과제 골드바흐의 추측 6588
 //import java.io.*;
 //import java.util.StringTokenizer;
