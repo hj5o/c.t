@@ -1,42 +1,87 @@
 package BaekJoon.BASIC;
 
-//
-//// 과제 골드바흐의 추측 6588
-//import java.io.*;
+////      1085 직사각형에서 탈출
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.Arrays;
 //import java.util.StringTokenizer;
 //
-//public class basic {
+//public class Main {
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        StringTokenizer st;
+//        int x = 0, y = 0, w = 0, h = 0;
 //
-//        int max = 1000000;
+//        st = new StringTokenizer(br.readLine()," ");
+//        x = Integer.parseInt(st.nextToken());
+//        y = Integer.parseInt(st.nextToken());
+//        w = Integer.parseInt(st.nextToken());
+//        h = Integer.parseInt(st.nextToken());
 //
-//        boolean[] check = new boolean[max + 1];
-//
-//        check[0] = check[1] = true;
-//
-//        for (int i = 2; i * i <= max; i++) {
-//            if (check[i]) continue;
-//            for (int j = i + i; j <= max; j += i) {
-//                check[j] = true;
-//            }
+//        if (x > w-x) {
+//            x = w-x;
+//        } else {
+//            x = x;
 //        }
-//        String input = "";
-//        while (!(input = br.readLine()).equals("0")) {
-//            int end = Integer.parseInt(input);
-//            boolean bool = false;
-//            for (int i = 3; i <= end; i++) {
-//                if (!check[i] && !check[end - i]) {
-//                    bw.write(end + " = " + i + " + " + (end - i) + "\n");
-//                    bool = true;
-//                    break;
-//                }
-//            }
-//            if(!bool) bw.write("Goldbach's conjecture is wrong.");
+//
+//        if (y > h-y) {
+//            y = h-y;
+//        } else {
+//            y = y;
 //        }
-//        bw.flush();
-//        bw.close();
+//
+//        int[] s = new int[2];
+//        s[0] = x;
+//        s[1] = y;
+//
+//        Arrays.sort(s);
+//        System.out.println(s[0]);
+//    }
+//}
+
+////      3009 네 번째 점
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.StringTokenizer;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st;
+//
+//        int x = 0;
+//        int y = 0;
+//        int[] p = new int[6];
+//        st = new StringTokenizer(br.readLine()," ");
+//        p[0] = Integer.parseInt(st.nextToken());
+//        p[1] = Integer.parseInt(st.nextToken());
+//
+//        st = new StringTokenizer(br.readLine()," ");
+//        p[2] = Integer.parseInt(st.nextToken());
+//        p[3] = Integer.parseInt(st.nextToken());
+//
+//        st = new StringTokenizer(br.readLine()," ");
+//        p[4] = Integer.parseInt(st.nextToken());
+//        p[5] = Integer.parseInt(st.nextToken());
+//
+//        if (p[0] == p[2]) {
+//            x = p[4];
+//        } else if (p[0] == p[4]) {
+//            x = p[2];
+//        } else {
+//            x = p[0];
+//        }
+//
+//        if (p[1] == p[3]) {
+//            y = p[5];
+//        } else if (p[1] == p[5]) {
+//            y = p[3];
+//        } else {
+//            y = p[1];
+//        }
+//        System.out.println(x + " " + y);
 //    }
 //}
 
