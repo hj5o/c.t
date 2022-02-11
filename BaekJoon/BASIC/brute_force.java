@@ -1,46 +1,45 @@
 package BaekJoon.BASIC;
 
-////      7586 덩치
+////     Problem  1476 날짜 계산
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.InputStreamReader;
 //import java.util.StringTokenizer;
 //
-//public class Main{
+//public class Main {
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st;
+//        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+//        int E = Integer.parseInt(st.nextToken());
+//        int S = Integer.parseInt(st.nextToken());
+//        int M = Integer.parseInt(st.nextToken());
 //
-//        int N = Integer.parseInt(br.readLine());
-//        int[] kg = new int[N];
-//        int[] cm = new int[N];
-//        int[] rank = new int[N];
-//        int cnt = 0;
+//        int i = 1, j = 1, k=1, y=1;
+//        while (true) {
+//            if ( i == E && j == S && k == M) {
+//                break;
+//            }
+//            i++;
+//            j++;
+//            k++;
+//            y++;
 //
-//
-//        for (int i=0; i<N; i++) {
-//            st = new StringTokenizer(br.readLine());
-//            kg[i]=Integer.parseInt(st.nextToken());
-//            cm[i]=Integer.parseInt(st.nextToken());
-//        }
-//
-//        for (int i=0; i<N; i++) {
-//            cnt = 1;
-//
-//            for (int j=0; j<N; j++) {
-//                if (kg[i] < kg[j] && cm[i] < cm[j])
-//                    cnt ++;
-//
-//                rank[i] = cnt;
+//            if (i > 15) {
+//                i = 1;
+//            }
+//            if (j > 28) {
+//                j = 1;
+//            }
+//            if (k > 19) {
+//                k = 1;
 //            }
 //        }
-//        for (int i=0; i<rank.length; i++) {
-//            System.out.print(rank[i] + " ");
-//        }
+//
+//        System.out.println(y);
 //    }
 //}
 
-////      2231 분해합
+////     Problem  2231 분해합
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.InputStreamReader;
@@ -73,7 +72,46 @@ package BaekJoon.BASIC;
 //    }
 //}
 
-////      2798 블랙잭
+////     Problem  2309 일곱 난쟁이
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int[] n = new int[9];
+//        int sum = 0;
+//
+//        for (int i=0; i<9; i++) {
+//            n[i] = Integer.parseInt(br.readLine());
+//            sum += n[i];
+//        }
+//        sum -= 100;
+//        Arrays.sort(n);
+//
+//        int c1 = 0, c2 = 0;
+//
+//        for (int i=0; i<9; i++) {
+//            int t_sum = sum - n[i];
+//            for (int j=i+1; j<9; j++) {
+//                if (t_sum == n[j] && i!=j) {
+//                    c1 = i;
+//                    c2 = j;
+//                    break;
+//                }
+//            }
+//        }
+//        for (int i=0; i<9; i++) {
+//            if(i!=c1 && i!=c2) {
+//                System.out.println(n[i]);
+//            }
+//        }
+//    }
+//}
+
+////     Problem  2798 블랙잭
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.InputStreamReader;
@@ -111,41 +149,42 @@ package BaekJoon.BASIC;
 //    }
 //}
 
-////      2309 일곱 난쟁이
+////     Problem  7586 덩치
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.InputStreamReader;
-//import java.util.Arrays;
+//import java.util.StringTokenizer;
 //
-//public class Main {
+//public class Main{
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int[] n = new int[9];
-//        int sum = 0;
+//        StringTokenizer st;
 //
-//        for (int i=0; i<9; i++) {
-//            n[i] = Integer.parseInt(br.readLine());
-//            sum += n[i];
+//        int N = Integer.parseInt(br.readLine());
+//        int[] kg = new int[N];
+//        int[] cm = new int[N];
+//        int[] rank = new int[N];
+//        int cnt = 0;
+//
+//
+//        for (int i=0; i<N; i++) {
+//            st = new StringTokenizer(br.readLine());
+//            kg[i]=Integer.parseInt(st.nextToken());
+//            cm[i]=Integer.parseInt(st.nextToken());
 //        }
-//        sum -= 100;
-//        Arrays.sort(n);
 //
-//        int c1 = 0, c2 = 0;
+//        for (int i=0; i<N; i++) {
+//            cnt = 1;
 //
-//        for (int i=0; i<9; i++) {
-//            int t_sum = sum - n[i];
-//            for (int j=i+1; j<9; j++) {
-//                if (t_sum == n[j] && i!=j) {
-//                    c1 = i;
-//                    c2 = j;
-//                    break;
-//                }
+//            for (int j=0; j<N; j++) {
+//                if (kg[i] < kg[j] && cm[i] < cm[j])
+//                    cnt ++;
+//
+//                rank[i] = cnt;
 //            }
 //        }
-//        for (int i=0; i<9; i++) {
-//            if(i!=c1 && i!=c2) {
-//                System.out.println(n[i]);
-//            }
+//        for (int i=0; i<rank.length; i++) {
+//            System.out.print(rank[i] + " ");
 //        }
 //    }
 //}
