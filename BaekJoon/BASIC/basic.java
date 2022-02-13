@@ -24,6 +24,33 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 1065 한수
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int N = Integer.parseInt(br.readLine());
+//        int count = 0;
+//        int A,B,C = 0;
+//
+//        for(int i=1; i<=N; i++){
+//            A=i/100;
+//            B=(i/10)%10;
+//            C=i%10;
+//            if(i<100)
+//                count++;
+//            else {
+//                if((A-B) == (B-C))
+//                    count++;
+//            }
+//        }
+//        System.out.println(count);
+//    }
+//}
+
 ////     Problem  1085 직사각형에서 탈출
 //import java.io.BufferedReader;
 //import java.io.IOException;
@@ -219,6 +246,55 @@ package BaekJoon.BASIC;
 //            y = p[1];
 //        }
 //        System.out.println(x + " " + y);
+//    }
+//}
+
+//     Problem 4344 평균은 넘겠지
+//import java.io.*;
+//import java.util.StringTokenizer;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        int C = Integer.parseInt(br.readLine());	//테스트 케이스
+//
+//        //토큰화
+//        String s;
+//        StringTokenizer st;
+//
+//        for (int i = 0; i < C; i++) {
+//            //점수를 받아낸 다음 쪼갬
+//            s = br.readLine();
+//            st = new StringTokenizer(s);
+//            //처음값은 학생수 : 따로 받아둠
+//            int N = Integer.parseInt(st.nextToken());	//학생 수
+//
+//            int sum = 0;
+//            int count = 0;
+//            int[] score = new int[N];
+//            for (int j = 0; j < N; j++) {
+//                score[j] = Integer.parseInt(st.nextToken());
+//                sum += score[j];
+//            }
+//
+//            //평균 계산
+//            sum /= N;
+//            for (int j = 0; j < N; j++) {
+//                //평균 이상의 학생수를 구한다.
+//                if (sum < score[j]) {
+//                    count++;
+//                }
+//            }
+//
+//            double pro = (double)count/N*100;
+//            bw.write(String.format("%.3f%s\n", pro,"%"));
+//
+//        }
+//
+//        bw.flush();
+//        bw.close();
 //    }
 //}
 
