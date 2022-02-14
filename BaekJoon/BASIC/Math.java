@@ -347,6 +347,28 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 11653 소인수분해
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int N = Integer.parseInt(br.readLine());
+//        int d = 2;
+//
+//        while (N != 1) {
+//            if (N%d == 0) {
+//                N /= d;
+//                System.out.println(d);
+//            } else {
+//                d++;
+//            }
+//        }
+//    }
+//}
+
 ////     Problem  17427 약수 (2)
 //import java.io.BufferedReader;
 //import java.io.IOException;
