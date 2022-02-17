@@ -124,6 +124,38 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 1934 최소공배수
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.StringTokenizer;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = null;
+//        StringBuilder sb = new StringBuilder();
+//
+//        int N = Integer.parseInt(br.readLine());
+//
+//        for (int i=0; i<N; i++) {
+//            st = new StringTokenizer(br.readLine());
+//            int a = Integer.parseInt(st.nextToken());
+//            int b = Integer.parseInt(st.nextToken());
+//
+//            int gcd = 0;
+//            for (int j=1; j<=Math.min(a, b); j++) {
+//                if ((a%j == 0) && (b%j == 0)) {
+//                    gcd = j;
+//                }
+//            }
+//            int lcm = a*b/gcd;
+//            sb.append(lcm+"\n");
+//        }
+//        System.out.println(sb);
+//    }
+//}
+
 ////     Problem  1978 소수 찾기
 //import java.util.Scanner;
 //
