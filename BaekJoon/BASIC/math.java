@@ -91,6 +91,25 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 1676 팩토리얼 0의 개수
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int N = Integer.parseInt(br.readLine());
+//        int cnt = 0;
+//
+//        while (N >= 5) {
+//            cnt += N/5;
+//            N/=5;
+//        }
+//        System.out.println(cnt);
+//    }
+//}
+
 ////     Problem  1929 소수 구하기 (Buffer)
 //import java.io.*;
 //import java.util.StringTokenizer;
@@ -211,6 +230,46 @@ package BaekJoon.BASIC;
 //            m -= 45;
 //        }
 //        System.out.println(h + " " + m);
+//    }
+//}
+
+
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.ArrayList;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int M = Integer.parseInt(br.readLine());
+//        int N = Integer.parseInt(br.readLine());
+//        int sum = 0;
+//        boolean flag = true;
+//
+//        ArrayList<Integer> list = new ArrayList<>();
+//
+//        for(int i=M; i<=N; i++) {
+//            for(int j=2; j<i; j++) {
+//                if(i % j == 0) {
+//                    flag = false;
+//                    break;
+//                }
+//            }
+//
+//            if(flag && i != 1) {
+//                list.add(i);
+//                sum += i;
+//            }
+//            flag = true;
+//        }
+//
+//        if(!list.isEmpty()) {
+//            System.out.println(sum);
+//            System.out.println(list.get(0));
+//        } else {
+//            System.out.println(-1);
+//        }
 //    }
 //}
 
