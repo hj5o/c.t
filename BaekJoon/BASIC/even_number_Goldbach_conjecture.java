@@ -1,5 +1,5 @@
 package BaekJoon.BASIC;
-////   Problem 6588
+////     Problem 6588
 //import java.io.IOException;
 //import java.util.Scanner;
 //
