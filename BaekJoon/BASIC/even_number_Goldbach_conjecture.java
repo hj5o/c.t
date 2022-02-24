@@ -1,39 +1,44 @@
 package BaekJoon.BASIC;
-
-//// 과제 골드바흐의 추측 6588
-//import java.io.*;
+////   Problem 6588
+//import java.io.IOException;
+//import java.util.Scanner;
 //
-//public class Main {
+//public class even_number_Goldbach_conjecture {
 //    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//
-//        int max = 1000000;
-//
-//        boolean[] check = new boolean[max + 1];
-//
-//        check[0] = check[1] = true;
-//
-//        for (int i = 2; i * i <= max; i++) {
-//            if (check[i]) continue;
-//            for (int j = i + i; j <= max; j += i) {
-//                check[j] = true;
-//            }
+//        Scanner sc=new Scanner(System.in);
+//        int max=1000000;
+//        boolean []number=new boolean[max+1];
+//        number[0]=false;
+//        number[1]=false;
+//        for(int i=2;i<=max;i++) {
+//            number[i] = true;
 //        }
-//        String input = "";
-//        while (!(input = br.readLine()).equals("0")) {
-//            int end = Integer.parseInt(input);
-//            boolean bool = false;
-//            for (int i = 3; i <= end; i++) {
-//                if (!check[i] && !check[end - i]) {
-//                    bw.write(end + " = " + i + " + " + (end - i) + "\n");
-//                    bool = true;
-//                    break;
+//
+//        //에라토스테네스의 체로 소수 판별
+//        for(int i=2;i<=max;i++) {
+//            if (number[i]) {
+//                for (int j = i+i; j <= max; j+=i){
+//                    number[j]=false;
 //                }
 //            }
-//            if(!bool) bw.write("Goldbach's conjecture is wrong.");
 //        }
-//        bw.flush();
-//        bw.close();
+//        while(true){
+//            int input=sc.nextInt();
+//            boolean ok=false;
+//            if(input==0)
+//                break;
+//            for(int i=2;i<=input/2;i++){
+//                if (number[i] && number[input-i]) {
+//                    System.out.println(input + " = " + i + " + " + (input - i));
+//                    ok=true;
+//                    break;
+//
+//                }
+//            }
+//            if(!ok){
+//                System.out.println("Goldbach's conjecture is wrong.");
+//            }
+//
+//        }
 //    }
 //}
