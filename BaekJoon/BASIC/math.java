@@ -150,6 +150,30 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 1436 영화감독 숌
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String args []) {
+//
+//        Scanner sc = new Scanner(System.in);
+//
+//        int N = sc.nextInt();
+//        int count = 0;
+//
+//        for (int i = 666; ; i++) {
+//            if (Integer.toString(i).indexOf("666") != -1) {
+//                count++;
+//            }
+//
+//            if (count == N) {
+//                System.out.println(i);
+//                return;
+//            }
+//        }
+//    }
+//}
+
 ////     Problem 1676 팩토리얼 0의 개수
 //import java.io.BufferedReader;
 //import java.io.IOException;
