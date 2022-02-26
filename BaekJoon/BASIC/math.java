@@ -290,7 +290,7 @@ package BaekJoon.BASIC;
 //    }
 //}
 
-////     Problem 2247 로프
+////     Problem 2217 로프
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.InputStreamReader;
