@@ -193,6 +193,29 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////   Problem 1748 수 이어 쓰기 1
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int count = 0;
+//        int plus = 1;
+//        int num = 10;
+//        int N = Integer.parseInt(br.readLine());
+//        for(int i=1; i<=N; i++) {
+//            if(i%num == 0) {
+//                plus ++;
+//                num *= 10;
+//            }
+//            count += plus;
+//        }
+//        System.out.println(count);
+//    }
+//}
+
 ////     Problem  1929 소수 구하기 (Buffer)
 //import java.io.*;
 //import java.util.StringTokenizer;
