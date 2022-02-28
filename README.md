@@ -17,6 +17,5 @@
 ##### ++ 6588(골드바흐) <br>
 ##### ++ 2751(수 정렬하기 2) : 시간 초과 (정렬 쪽으로 다시 풀기) <br><hr>
 #### Gold <br>
-##### BASIC
-##### BRUTE_FORCE
+##### MATH
 ### Programmers (+SQL)
