@@ -47,8 +47,7 @@ package BaekJoon.BASIC;
 
 ////     Problem 11650 좌표 정렬하기
 // * Comparator와 2차원배열 Intellij에서는 오버라이드와 compare 함수선언이 자동완성으로 되었지만
-// 프로그래머스에서 직접 짜야할 때 할 수 있을지..
-// 스캐너가 아닌 br, st로 했을때 왜 예외가 나는지..
+// 프로그래머스에서 직접 짜야할 때 할 수 있을지.. 스캐너가 아닌 br, st로 했을때 왜 예외가 나는지..
 //import java.util.Arrays;
 //import java.util.Comparator;
 //import java.util.Scanner;
