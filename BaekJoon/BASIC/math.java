@@ -150,6 +150,30 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 1292 쉽게 푸는 문제
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int a = sc.nextInt();
+//        int b = sc.nextInt();
+//        List<Integer> list = new ArrayList<>();
+//        for (int i = 1; i < b; i++) {
+//            for (int j = 0; j < i; j++) {
+//                list.add(i);
+//            }
+//        }
+//        int result = 0;
+//        for (int i = a; i <= b; i++) {
+//            result += list.get(i-1);
+//        }
+//        System.out.println(result);
+//    }
+//}
+
 ////     Problem 1436 영화감독 숌
 //import java.util.Scanner;
 //
