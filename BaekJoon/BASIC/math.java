@@ -240,6 +240,24 @@ package BaekJoon.BASIC;
 //    }
 //}
 
+////     Problem 1789 (수 들의 합)
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//
+//public class Main {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        long N = Long.parseLong(br.readLine());
+//        long sum = 0;
+//        int m=1;
+//        while(sum<=N) {
+//            sum += m++;
+//        }
+//        System.out.println(m-2);
+//    }
+//}
+
 ////     Problem  1929 소수 구하기 (Buffer)
 //import java.io.*;
 //import java.util.StringTokenizer;
