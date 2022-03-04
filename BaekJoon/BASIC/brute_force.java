@@ -1,6 +1,6 @@
 package BaekJoon.BASIC;
 
-////     Problem  1476 날짜 계산
+//       Problem  1476 날짜 계산
 //import java.io.BufferedReader;
 //import java.io.IOException;
 //import java.io.InputStreamReader;
