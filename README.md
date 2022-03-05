@@ -17,7 +17,6 @@
 ##### QUEUE_STACK
 > 10773(제로)
 ##### ++ 6588(골드바흐) <br>
-#### Gold <br>
-##### 고찰 및 의견 추가하기 <br>
+#### Gold  -고찰 및 의견 추가하기 <br>
 ##### MATH
 ### Programmers (+SQL)
