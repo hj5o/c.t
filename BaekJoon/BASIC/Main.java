@@ -1,5 +1,2 @@
 package BaekJoon.BASIC;
 
-
-
-
