@@ -53,7 +53,7 @@ public class Main {
         }
     }
 }
-       Problem 11726 2*n 타일링
+       Problem 11726 2xn 타일링
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
