@@ -24,6 +24,41 @@ public class Main {
     }
 }
 
+       Problem 2579 계단 오르기
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+N번째 계단을 밟는 경우? (연속된 계단 3개를 밟을 수 없음)
+2. N-2를 밟고 N을 밟는다.
+1. N-3과 N-1을 밟고 N을 밟는다.
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int max = 300;
+        int[] dp = new int [max+1];
+        int[] arr = new int [max+1];
+
+        for (int i=1; i<=N; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+        dp[1] = arr[1];
+        dp[2] = arr[1] + arr[2];
+        dp[3] = Math.max(arr[1],arr[2])+arr[3];
+
+        for (int i=4; i<=N; i++) {
+            dp[i] = Math.max(dp[i-2], dp[i-3] + arr[i-1]) + arr[i];
+        }
+        System.out.println(dp[N]);
+    }
+}
+
        Problem 9095 1, 2, 3 더하기
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -53,6 +88,7 @@ public class Main {
         }
     }
 }
+
        Problem 11726 2xn 타일링
 import java.io.BufferedReader;
 import java.io.IOException;
