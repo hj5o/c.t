@@ -70,10 +70,6 @@ N번째 계단을 밟는 경우? (연속된 계단 3개를 밟을 수 없음)
   2. N-3과 N-1을 밟고 N을 밟는다.
 *마지막 계단을 반드시 밟는다.
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -136,10 +132,6 @@ import java.io.InputStreamReader;
 3은 3가지
 4는 5가지
 dp[i] = dp[i-1] + dp[i-2]
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
