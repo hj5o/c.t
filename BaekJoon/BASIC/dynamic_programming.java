@@ -1,4 +1,5 @@
 package BaekJoon.BASIC;
+
 /*
        Problem 1463 1로 만들기
 import java.io.BufferedReader;
@@ -21,6 +22,40 @@ public class Main {
             }
         }
         System.out.println(dp[N]);
+    }
+}
+
+       Problem 1932 정수 삼각형
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+단순히 위에서 아래로 내려오는 최대 경로가 아님
+이진트리로 부모 노드를 거치지 않으면 같은 차수에 높은 숫자가 있어도 채택할 수 없음
+Bottom up 방식이 아닌 Top down 방식인 재귀로 해결
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st;
+        int[][] arr = new int[N][];
+
+        for (int i=0; i<N; i++) {
+            arr[i] = new int[i+1];
+
+            st = new StringTokenizer(br.readLine()," ");
+            for (int j=0; j<=i; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+        for (int i=N-1; i>0; i--) {
+            for (int j=0; j<i; j++) {
+                arr[i-1][j] += Math.max(arr[i][j], arr[i][j+1]);
+            }
+        }
+        System.out.println(arr[0][0]);
     }
 }
 
@@ -148,3 +183,4 @@ public class Main {
     }
 }
 */
+

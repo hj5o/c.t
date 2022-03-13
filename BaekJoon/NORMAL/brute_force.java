@@ -1,6 +1,7 @@
 package BaekJoon.NORMAL;
+/*
 
-     Problem 1107 리모콘
+       Problem 1107 리모콘
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,4 +24,4 @@ public class Main {
         }
 
     }
-}
+}*/

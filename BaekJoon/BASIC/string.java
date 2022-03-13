@@ -1,4 +1,5 @@
 package BaekJoon.BASIC;
+/*
 
      Problem 1157 단어공부
 import java.util.Scanner;
@@ -27,3 +28,4 @@ public class Main {
         System.out.println(answer);
     }
 }
+*/
