@@ -174,6 +174,34 @@ public class Main {
         }
     }
 }
+       Problem 9655~9657 돌 게임 1~3
+       1,2는 쉬워서 패스
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+돌을 1, 3, 4개 가져갈 수 있다.
+마지막 돌을 가져가는 사람이 이긴다.
+0 = SK
+1 = SK
+2 = CY
+3 = SK
+4 = SK
+5 = SK
+6 = SK
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        if (N%7 == 0 || N%7 == 2) {
+            System.out.println("CY");
+        } else {
+            System.out.println("SK");
+        }
+    }
+}
 
        Problem 11726 2xn 타일링
 import java.io.BufferedReader;
