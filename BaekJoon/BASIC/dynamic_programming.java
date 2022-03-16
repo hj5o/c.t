@@ -174,7 +174,7 @@ public class Main {
         }
     }
 }
-       Problem 9655~9657 돌 게임 1~3
+       Problem 9655~9658 돌 게임 1~4
        1,2는 쉬워서 패스
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -195,7 +195,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        if (N%7 == 0 || N%7 == 2) {
+        if (N%7 == 1 || N%7 == 3) {
             System.out.println("CY");
         } else {
             System.out.println("SK");
