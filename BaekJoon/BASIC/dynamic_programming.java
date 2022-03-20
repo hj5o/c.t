@@ -1,6 +1,37 @@
 package BaekJoon.BASIC;
 
 /*
+       Problem 1003 피보나치 함수
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[] dp = new int[N];
+        for (int i=0; i<N; i++) {
+            dp[i] = Integer.parseInt(br.readLine());
+        }
+        int[] f0 = new int[41];
+        int[] f1 = new int[41];
+
+        f0[0] = 1;
+        f0[1] = 0;
+        f1[0] = 0;
+        f1[1] = 1;
+
+        for (int i=2; i<41; i++) {
+            f0[i] = f0[i-1] + f0[i-2];
+            f1[i] = f1[i-1] + f1[i-2];
+        }
+        for (int i=0; i<N; i++) {
+            System.out.printf("%d %d\n", f0[dp[i]], f1[dp[i]]);
+        }
+    }
+}
+
        Problem 1463 1로 만들기
 import java.io.BufferedReader;
 import java.io.IOException;
