@@ -682,6 +682,31 @@ public class Main {
         }
     }
 }
+       Problem 15965 K번째 소수
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int max = 10000000;
+        int[] prime = new int[max];
+        boolean[] check = new boolean[max];
+        check[0] = check[1] = true;
+        int cnt = 0;
+        for (int i=2; i<max; i++) {
+            if (!check[i]) {
+                prime[cnt++] = i;
+                for (int j=i+i; j<max; j+=i) {
+                    check[j] = true;
+                }
+            }
+        }
+        System.out.println(prime[N-1]);
+    }
+}
 
        Problem  17427 약수 (2)
 import java.io.BufferedReader;
