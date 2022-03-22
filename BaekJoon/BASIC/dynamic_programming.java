@@ -57,14 +57,14 @@ public class Main {
 }
 
        Problem 1932 정수 삼각형
+단순히 위에서 아래로 내려오는 최대 경로가 아님
+이진트리로 부모 노드를 거치지 않으면 같은 차수에 높은 숫자가 있어도 채택할 수 없음
+Bottom up 방식이 아닌 Top down 방식인 재귀로 해결
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-단순히 위에서 아래로 내려오는 최대 경로가 아님
-이진트리로 부모 노드를 거치지 않으면 같은 차수에 높은 숫자가 있어도 채택할 수 없음
-Bottom up 방식이 아닌 Top down 방식인 재귀로 해결
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -91,14 +91,14 @@ public class Main {
 }
 
        Problem 2156 포도주 시식
+계단 오르기 문제와 비슷하다.
+다만 계단 오르기는 마지막 계단을 반드시 밟아야했는데, 포도주 시식문제는 그런 조건 없다.
+따라서 이전 dp와 비교하여 최댓값을 갱신해야한다.
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-
-계단 오르기 문제와 비슷하다.
-다만 계단 오르기는 마지막 계단을 반드시 밟아야했는데, 포도주 시식문제는 그런 조건 없다.
-따라서 이전 dp와 비교하여 최댓값을 갱신해야한다.
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -127,14 +127,14 @@ public class Main {
 }
 
        Problem 2579 계단 오르기
+N번째 계단을 밟는 경우? (연속된 계단 3개를 밟을 수 없음)
+1. N-2를 밟고 N을 밟는다.
+2. N-3과 N-1을 밟고 N을 밟는다.
+*마지막 계단을 반드시 밟는다.
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-N번째 계단을 밟는 경우? (연속된 계단 3개를 밟을 수 없음)
-  1. N-2를 밟고 N을 밟는다.
-  2. N-3과 N-1을 밟고 N을 밟는다.
-*마지막 계단을 반드시 밟는다.
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -177,15 +177,16 @@ public class Main {
 }
 
        Problem 9095 1, 2, 3 더하기
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 1은 1가지
 2는 1+1 / 2 = 2가지
 3은 1+1+1 / 1+2 / 2+1 / 3 = 4가지
 
 4는 1+1+1+1 / 1+1+2 / 1+2+1 / 2+1+1 / 2+2 / 1+3 / 3+1 = 7가지
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -206,11 +207,6 @@ public class Main {
     }
 }
        Problem 9655~9661 돌 게임 1~7
-       1,2는 쉬워서 패스
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 돌을 1, 3, 4개 가져갈 수 있다.
 마지막 돌을 가져가는 사람이 이긴다.
 0 = SK
@@ -220,6 +216,10 @@ import java.io.InputStreamReader;
 4 = SK
 5 = CY
 6 = SK
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -235,15 +235,15 @@ public class Main {
 }
 
        Problem 11726 2xn 타일링
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 1은 1가지
 2는 2가지
 3은 3가지
 4는 5가지
 dp[i] = dp[i-1] + dp[i-2]
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -260,13 +260,13 @@ public class Main {
     }
 }
        Problem 14501 퇴사
+N+1일에 퇴사하기 때문에
+t[i] + i는 N일 이하여야 한다.
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-N+1일에 퇴사하기 때문에
-t[i] + i는 N일 이하여야 한다.
 
 public class Main {
     public static void main(String[] args) throws IOException {
