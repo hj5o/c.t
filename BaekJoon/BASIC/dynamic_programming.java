@@ -126,6 +126,34 @@ public class Main {
     }
 }
 
+       Problem 2293 동전 1
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int[] v = new int[N];
+        int[] dp = new int[K+1];
+
+        for (int i=0; i<N; i++) {
+            v[i] = Integer.parseInt(br.readLine());
+        }
+        dp[0] = 1;
+        for(int i=0; i<N; i++) {
+            for(int j=v[i]; j<=K; j++) {
+                dp[j] += dp[j - v[i]];
+            }
+        }
+        System.out.println(dp[K]);
+    }
+}
+
        Problem 2579 계단 오르기
 N번째 계단을 밟는 경우? (연속된 계단 3개를 밟을 수 없음)
 1. N-2를 밟고 N을 밟는다.
@@ -157,7 +185,7 @@ public class Main {
         System.out.println(dp[N]);
     }
 }
-       Problem 2748
+       Problem 2748 피보나치 수 2
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
