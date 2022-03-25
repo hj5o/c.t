@@ -585,6 +585,37 @@ public class Main {
     }
 }
 
+       Problem 4948 베르트랑 공준
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (true) {
+            int N = Integer.parseInt(br.readLine());
+            if (N == 0) break;
+
+            boolean check[] = new boolean[2*N+1];
+            check[0] = check[1] = true;
+            int cnt = 0;
+            for (int i=2; i<=Math.sqrt(check.length); i++) {
+                for (int j=i*i; j<check.length; j+=i) {
+                    check[j] = true;
+                }
+            }
+
+            for (int i=N+1; i<2*N+1; i++) {
+                if(!check[i]) {
+                    cnt++;
+                }
+            }
+            System.out.println(cnt);
+        }
+    }
+}
+
        Problem 10610 30
 import java.io.BufferedReader;
 import java.io.IOException;
