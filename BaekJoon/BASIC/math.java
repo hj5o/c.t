@@ -1,5 +1,30 @@
 package BaekJoon.BASIC;
 /*
+       Problem 1110 더하기 사이클
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int M = N;
+        int cnt = 0;
+
+        while (true) {
+            int a = M/10;
+            int b = M%10;
+            M = b*10 + (a+b)%10;
+            cnt ++;
+            if (N==M) {
+                break;
+            }
+        }
+        System.out.println(cnt);
+    }
+}
+
        Problem 1026 보물
 import java.io.BufferedReader;
 import java.io.IOException;

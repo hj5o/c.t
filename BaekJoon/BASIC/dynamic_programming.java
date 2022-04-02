@@ -306,11 +306,40 @@ public class Main {
         dp[1] = 1;
         dp[2] = 2;
         for (int i=3; i<=N; i++) {
-            dp[i] = (dp[i-1] + dp[i-2])%10007;
+            dp[i] = (dp[i-1] + dp[i-2]) % 10007;
         }
         System.out.println(dp[N]);
     }
 }
+1을 채울 때
+1
+2를 채울 때
+3
+3을 채울 때
+5
+4를 채울 때
+9
+dp[i] = dp[i-1] + 2*dp[i-2]
+       Problem 11726 2xn 타일링 2
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int max = 1000;
+        int[] dp = new int[max+1];
+        dp[1] = 1;
+        dp[2] = 3;
+        for (int i=3; i<=N; i++) {
+            dp[i] = (dp[i-1] + 2*dp[i-2]) % 10007;
+        }
+        System.out.println(dp[N]);
+    }
+}
+
        Problem 14501 퇴사
 N+1일에 퇴사하기 때문에
 t[i] + i는 N일 이하여야 한다.
