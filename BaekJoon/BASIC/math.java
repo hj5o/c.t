@@ -1,30 +1,5 @@
 package BaekJoon.BASIC;
 /*
-       Problem 1110 더하기 사이클
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int M = N;
-        int cnt = 0;
-
-        while (true) {
-            int a = M/10;
-            int b = M%10;
-            M = b*10 + (a+b)%10;
-            cnt ++;
-            if (N==M) {
-                break;
-            }
-        }
-        System.out.println(cnt);
-    }
-}
-
        Problem 1026 보물
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -199,6 +174,31 @@ public class Main {
     }
 }
 
+       Problem 1110 더하기 사이클
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int M = N;
+        int cnt = 0;
+
+        while (true) {
+            int a = M/10;
+            int b = M%10;
+            M = b*10 + (a+b)%10;
+            cnt ++;
+            if (N==M) {
+                break;
+            }
+        }
+        System.out.println(cnt);
+    }
+}
+
        Problem 1436 영화감독 숌
 import java.util.Scanner;
 
@@ -220,6 +220,35 @@ public class Main {
                 return;
             }
         }
+    }
+}
+
+       Problem 1546 평균
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        int N = Integer.parseInt(br.readLine());
+        double[] num = new double[1001];
+        double sum = 0;
+
+        st = new StringTokenizer(br.readLine(), " ");
+        for (int i=0; i<N; i++) {
+            num[i] = Double.parseDouble(st.nextToken());
+        }
+
+        Arrays.sort(num);
+
+        for (int i=0; i<num.length; i++) {
+            sum += ((num[i]/num[num.length-1])*100);
+        }
+        System.out.println(sum / N);
     }
 }
 
