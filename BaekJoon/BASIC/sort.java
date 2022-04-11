@@ -173,6 +173,31 @@ public class Main {
     }
 }
 
+       Problem 10867 중복 빼고 정렬하기
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        int N = Integer.parseInt(br.readLine());
+
+        HashSet<Integer> hs = new HashSet<>();
+        st = new StringTokenizer(br.readLine()," ");
+        for (int i=0; i<N; i++) {
+            hs.add(Integer.parseInt(st.nextToken()));
+        }
+        ArrayList<Integer> nums = new ArrayList<>(hs);
+        Collections.sort(nums);
+
+        for (int ans : nums) {
+            System.out.print(ans + " ");
+        }
+    }
+}
 
        Problem 11650 좌표 정렬하기
  * Comparator와 2차원배열 Intellij에서는 오버라이드와 compare 함수선언이 자동완성으로 되었지만
