@@ -56,6 +56,37 @@ public class Main {
     }
 }
 
+       Problem 2822 점수 계산
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] num = new int[8];
+        int[] temp = new int[8];
+        int sum = 0;
+        for (int i=0; i<8; i++) {
+            num[i] = Integer.parseInt(br.readLine());
+            temp[i] = num[i];
+        }
+        Arrays.sort(num);
+        for (int i=3; i<8; i++) {
+            sum += num[i];
+        }
+        System.out.println(sum);
+        for (int i=0; i<8; i++) {
+            for (int j=3; j<8; j++) {
+                if (temp[i] == num[j]) {
+                    System.out.print(i+1 + " ");
+                }
+            }
+        }
+    }
+}
+
        Problem 2693 N번째 큰 수
 import java.io.BufferedReader;
 import java.io.IOException;
