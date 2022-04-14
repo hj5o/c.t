@@ -56,37 +56,6 @@ public class Main {
     }
 }
 
-       Problem 2822 점수 계산
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] num = new int[8];
-        int[] temp = new int[8];
-        int sum = 0;
-        for (int i=0; i<8; i++) {
-            num[i] = Integer.parseInt(br.readLine());
-            temp[i] = num[i];
-        }
-        Arrays.sort(num);
-        for (int i=3; i<8; i++) {
-            sum += num[i];
-        }
-        System.out.println(sum);
-        for (int i=0; i<8; i++) {
-            for (int j=3; j<8; j++) {
-                if (temp[i] == num[j]) {
-                    System.out.print(i+1 + " ");
-                }
-            }
-        }
-    }
-}
-
        Problem 2693 N번째 큰 수
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -182,6 +151,37 @@ public class Main {
     }
 }
 
+       Problem 2822 점수 계산
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] num = new int[8];
+        int[] temp = new int[8];
+        int sum = 0;
+        for (int i=0; i<8; i++) {
+            num[i] = Integer.parseInt(br.readLine());
+            temp[i] = num[i];
+        }
+        Arrays.sort(num);
+        for (int i=3; i<8; i++) {
+            sum += num[i];
+        }
+        System.out.println(sum);
+        for (int i=0; i<8; i++) {
+            for (int j=3; j<8; j++) {
+                if (temp[i] == num[j]) {
+                    System.out.print(i+1 + " ");
+                }
+            }
+        }
+    }
+}
+
        Problem 3273 두 수의 합
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -226,6 +226,35 @@ public class Main {
             }
         }
         System.out.println(count);
+    }
+}
+
+       Problem 5576 콘테스트
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] W = new int[10];
+        int[] K = new int[10];
+        int W_sum = 0;
+        int K_sum = 0;
+        for (int i=0; i<W.length; i++) {
+            W[i] = Integer.parseInt(br.readLine());
+        }
+        for (int i=0; i<K.length; i++) {
+            K[i] = Integer.parseInt(br.readLine());
+        }
+        Arrays.sort(W);
+        Arrays.sort(K);
+        for (int i=7; i<10; i++) {
+            W_sum += W[i];
+            K_sum += K[i];
+        }
+        System.out.println(W_sum + " " + K_sum);
     }
 }
 
