@@ -258,6 +258,38 @@ public class Main {
     }
 }
 
+       Problem 10815 숫자 카드
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        HashSet<Integer> set = new HashSet<>();
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i=0; i<N; i++) {
+            set.add(Integer.parseInt(st.nextToken()));
+        }
+
+        int M = Integer.parseInt(br.readLine());
+        StringTokenizer st2 = new StringTokenizer(br.readLine());
+        for (int i=0; i<M; i++) {
+            int num = Integer.parseInt(st2.nextToken());
+
+            if (set.contains(num)) {
+                System.out.print("1" + " ");
+            } else {
+                System.out.print("0" + " ");
+            }
+        }
+    }
+}
+
        Problem 10867 중복 빼고 정렬하기
 import java.io.BufferedReader;
 import java.io.IOException;
