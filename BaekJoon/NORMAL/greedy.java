@@ -37,4 +37,37 @@ public class Main {
         System.out.println(max+1);
     }
 }
+
+       Problem 13164 행복 유치원
+N명의 원생, K개의 조
+N명이 하나의 각자 그룹이다. 이 상태에서 1개의 그룹를 만들면 N-1개의 그룹이 남는다.
+K개의 조를 형성하면 N-K
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int[] arr = new int[N];
+        arr[0] = Integer.parseInt(st.nextToken());
+
+        for (int i=1; i<N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            arr[i-1] = arr[i] - arr[i-1];
+        }
+
+        Arrays.sort(arr);
+        int ans = 0;
+        for (int i=0; i<N-K; i++) {
+            ans += arr[i];
+        }
+        System.out.println(ans);
+    }
+}
 */
