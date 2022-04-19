@@ -71,7 +71,7 @@ public class Main {
     }
 }
 
-       Problem 9327 이장님의 초대
+       Problem 9327 이장님 초대
 import java.io.*;
 import java.util.*;
 
