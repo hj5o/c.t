@@ -71,6 +71,36 @@ public class Main {
     }
 }
 
+       Problem 9327 이장님의 초대
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        int N = Integer.parseInt(br.readLine());
+        Integer[] arr = new Integer[N];
+        int[] num = new int[N];
+
+        st = new StringTokenizer(br.readLine());
+        for (int i=0; i<arr.length; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        Arrays.sort(arr, Collections.reverseOrder());
+        int max = 0;
+
+        for (int i=0; i<N; i++) {
+            num[i] = i + arr[i] + 2;
+            if (num[i] > max) {
+                max = num[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
        Problem 11047 동전 0
 import java.io.BufferedReader;
 import java.io.IOException;
