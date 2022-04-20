@@ -79,6 +79,26 @@ public class Main {
         System.out.println(dp[N]);
     }
 }
+       Problem 1699 제곱수의 합
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[] dp = new int[N+1];
+
+        for (int i=1; i<=N; i++) {
+            dp[i] = i;
+            for (int j=1; j*j <=i; j++) {
+                if (dp[i] > dp[i-j*j]+1) {
+                    dp[i] = dp[i-j*j]+1;
+                }
+            }
+        }
+        System.out.println(dp[N]);
+    }
+}
 
        Problem 1932 정수 삼각형
 단순히 위에서 아래로 내려오는 최대 경로가 아님
