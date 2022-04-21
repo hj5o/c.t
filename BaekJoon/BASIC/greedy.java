@@ -46,6 +46,36 @@ public class Main {
     }
 }
 
+       Problem 1758 알바생 강호
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        Integer[] arr = new Integer[N];
+        int[] price = new int[N];
+        long ans = 0;
+
+        for (int i=0; i<arr.length; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+        Arrays.sort(arr, Comparator.reverseOrder());
+        for (int i=0; i<arr.length; i++) {
+            price[i] = arr[i] -(i);
+            if (price[i] <= 0) {
+                price[i] = 0;
+            }
+            ans += price[i];
+        }
+        System.out.println(ans);
+    }
+}
+
        Problem 2839 설탕 배달
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
