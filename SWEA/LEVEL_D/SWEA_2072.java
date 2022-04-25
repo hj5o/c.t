@@ -60,7 +60,7 @@ class SWEA_2072
             for(int j=0; j<10; j++)
             {
                 val = sc.nextInt();
-                if(val % 2!=0)
+                if(val % 2 != 0)
                     sum+=val;
             }
             System.out.println("#"+i+" "+sum);
