@@ -1,5 +1,35 @@
 package BaekJoon.BASIC;
 /*
+       Problem 1052 물병
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int buy = 0;
+
+        while (true) {
+            int cnt = 0;
+            int num = N;
+            while (num != 0) {
+                if(num % 2 == 1) {
+                    cnt++;
+                }
+                num /= 2;
+            }
+            if (cnt <= K) {
+                break;
+            }
+            buy ++;
+            N ++;
+        }
+        System.out.println(buy);
+    }
+}
 
        Problem 1343 폴리오미노
 import java.io.BufferedReader;
