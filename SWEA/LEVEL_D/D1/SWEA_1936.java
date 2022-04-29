@@ -1,4 +1,4 @@
-package SWEA.LEVEL_D;
+package SWEA.LEVEL_D.D1;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // 기본 제공코드는 임의 수정해도 관계 없습니다. 단, 입출력 포맷 주의
@@ -27,15 +27,14 @@ package SWEA.LEVEL_D;
 //System.out.println(var);		       				   // 문자열 1개 출력하는 예제
 //System.out.println(AB);		       				     // long 변수 1개 출력하는 예제
 /////////////////////////////////////////////////////////////////////////////////////////////
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 import java.io.FileInputStream;
 
 /*
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
  */
-class SWEA_2043 // 서랍의 비밀번호
+class SWEA_1936 // 1대1 가위바위보
 {
     public static void main(String args[]) throws Exception
     {
@@ -51,15 +50,29 @@ class SWEA_2043 // 서랍의 비밀번호
 		/*
 		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
 		 */
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int P = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
-        System.out.println(P-K+1);
+        Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+        int A = sc.nextInt();
+        if (A-T == -1 || A-T == 2) {
+            System.out.println("A");
+        } else {
+            System.out.println("B");
+        }
+
 		/*
 		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 		*/
 
+        for(int test_case = 1; test_case <= T; test_case++)
+        {
 
+            /////////////////////////////////////////////////////////////////////////////////////////////
+			/*
+				 이 부분에 여러분의 알고리즘 구현이 들어갑니다.
+			 */
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+        }
     }
 }

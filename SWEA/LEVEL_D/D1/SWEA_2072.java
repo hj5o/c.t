@@ -1,4 +1,4 @@
-package SWEA.LEVEL_D;
+package SWEA.LEVEL_D.D1;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // 기본 제공코드는 임의 수정해도 관계 없습니다. 단, 입출력 포맷 주의
@@ -34,7 +34,7 @@ import java.io.FileInputStream;
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
  */
-class SWEA_2046 // 스탬프 찍기
+class SWEA_2072
 {
     public static void main(String args[]) throws Exception
     {
@@ -53,8 +53,17 @@ class SWEA_2046 // 스탬프 찍기
         Scanner sc = new Scanner(System.in);
         int T;
         T=sc.nextInt();
-        for (int i=1; i<=T; i++) {
-            System.out.print("#");
+        int val = 0;
+        for(int i= 1; i <= T; i++)
+        {
+            int sum = 0 ;
+            for(int j=0; j<10; j++)
+            {
+                val = sc.nextInt();
+                if(val % 2 != 0)
+                    sum+=val;
+            }
+            System.out.println("#"+i+" "+sum);
         }
 		/*
 		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.

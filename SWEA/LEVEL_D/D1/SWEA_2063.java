@@ -1,4 +1,4 @@
-package SWEA.LEVEL_D;
+package SWEA.LEVEL_D.D1;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // 기본 제공코드는 임의 수정해도 관계 없습니다. 단, 입출력 포맷 주의
@@ -27,14 +27,14 @@ package SWEA.LEVEL_D;
 //System.out.println(var);		       				   // 문자열 1개 출력하는 예제
 //System.out.println(AB);		       				     // long 변수 1개 출력하는 예제
 /////////////////////////////////////////////////////////////////////////////////////////////
-import java.util.Scanner;
+import java.util.*;
 import java.io.FileInputStream;
 
 /*
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
  */
-class SWEA_2029 // 몫과 나머지 출력하기
+class SWEA_2063 // 중간값 찾기
 {
     public static void main(String args[]) throws Exception
     {
@@ -53,15 +53,12 @@ class SWEA_2029 // 몫과 나머지 출력하기
         Scanner sc = new Scanner(System.in);
         int T;
         T=sc.nextInt();
-        for (int i=0; i<T; i++) {
-            int q = 0;
-            int r = 0;
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            q = a / b;
-            r = a % b;
-            System.out.println("#" + (i+1) + " " + q + " " + r);
+        int[] arr = new int[T+1];
+        for (int i=1; i<=T; i++) {
+            arr[i] = sc.nextInt();
         }
+        Arrays.sort(arr);
+        System.out.println(arr[(T/2)+1]);
 		/*
 		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 		*/

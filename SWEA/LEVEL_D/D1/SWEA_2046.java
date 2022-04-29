@@ -1,4 +1,4 @@
-package SWEA.LEVEL_D;
+package SWEA.LEVEL_D.D1;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // 기본 제공코드는 임의 수정해도 관계 없습니다. 단, 입출력 포맷 주의
@@ -27,15 +27,14 @@ package SWEA.LEVEL_D;
 //System.out.println(var);		       				   // 문자열 1개 출력하는 예제
 //System.out.println(AB);		       				     // long 변수 1개 출력하는 예제
 /////////////////////////////////////////////////////////////////////////////////////////////
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 import java.io.FileInputStream;
 
 /*
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
  */
-class SWEA_2068 // 최대수 구하기
+class SWEA_2046 // 스탬프 찍기
 {
     public static void main(String args[]) throws Exception
     {
@@ -52,27 +51,13 @@ class SWEA_2068 // 최대수 구하기
 		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
 		 */
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        for (int i=0; i<N; i++) {
-            int[] arr = new int[10];
-            for (int j=0; j<10; j++) {
-                arr[j] = sc.nextInt();
-            }
-            Arrays.sort(arr);
-            System.out.println("#" + (i+1) + " " + arr[9]);
+        int T;
+        T=sc.nextInt();
+        for (int i=1; i<=T; i++) {
+            System.out.print("#");
         }
 		/*
 		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 		*/
-
-
-
-        /////////////////////////////////////////////////////////////////////////////////////////////
-			/*
-				 이 부분에 여러분의 알고리즘 구현이 들어갑니다.
-			 */
-        /////////////////////////////////////////////////////////////////////////////////////////////
-
-
     }
 }
