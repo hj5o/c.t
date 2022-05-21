@@ -37,7 +37,41 @@ public class Main {
     }
 }
 
-       Problem 1427
+       Problem 1337 올바른 배열
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        for (int i=0; i<N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int ans = 2147483647;
+        int left = 0;
+        int right = 0;
+        Arrays.sort(arr);
+
+        while (right >= left) {
+            if (right >= arr.length) {
+                break;
+            }
+            if (arr[right] - arr[left] > 4) {
+                left++;
+            } else {
+                int val = 5 - (right - left + 1);
+                ans = Math.min(ans, val);
+                right++;
+            }
+        }
+
+        System.out.println(ans);
+    }
+}
+
+       Problem 1427 소트인사이드
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
