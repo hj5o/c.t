@@ -316,6 +316,34 @@ public class Main {
     }
 }
 
+       Problem 11536 줄 세우기
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        String[] str = new String[N];
+        for (int i=0; i<N; i++) {
+            str[i] = br.readLine();
+        }
+        String[] clone = str.clone();
+        Arrays.sort(str);
+        if (clone[clone.length-1] == str[0]) {
+            System.out.println("DECREASING");
+        }
+        else if (clone[0] == str[0]) {
+            System.out.println("INCREASING");
+        }
+        else {
+            System.out.println("NEITHER");
+        }
+    }
+}
+
        Problem 11650 좌표 정렬하기
  * Comparator와 2차원배열 Intellij에서는 오버라이드와 compare 함수선언이 자동완성으로 되었지만
  프로그래머스에서 직접 짜야할 때 할 수 있을지.. 스캐너가 아닌 br, st로 했을때 왜 예외가 나는지..
