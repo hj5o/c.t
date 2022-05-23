@@ -306,6 +306,27 @@ public class Main {
     }
 }
 
+       Problem 14494 다이나믹이 뭐예요?
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int div = 1000000007;
+        long[][] dp = new long[1001][1001];
+        dp[0][0] = 1;
+        dp[1][1] = 1;
+        for (int i=1; i<=N; i++) {
+            for (int j=1; j<=M; j++) {
+                dp[i][j] = (dp[i-1][j] % div + dp[i][j-1] % div + dp[i-1][j-1] % div) % div;
+            }
+        }
+        System.out.println(dp[N][M] % div);
+    }
+}
+
        Problem 11726 2xn 타일링
 1은 1가지
 2는 2가지
