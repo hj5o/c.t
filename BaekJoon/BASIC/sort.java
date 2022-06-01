@@ -375,6 +375,41 @@ public class Main {
     }
 }
 
+       Problem 11497 통나무 건너뛰기
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        for (int tc=0; tc<T; tc++) {
+            int N = sc.nextInt();
+            int[] L = new int[N];
+            for (int i=0; i<L.length; i++) {
+                L[i] = sc.nextInt();
+            }
+            Arrays.sort(L);
+            int[] num = new int[N];
+            int left = 0;
+            int right = N-1;
+            for (int i=0; i<num.length; i++) {
+                if (i % 2 == 0) {
+                    num[left++] = L[i];
+                } else {
+                    num[right--] = L[i];
+                }
+            }
+            int max = 0;
+            for (int i=1; i<num.length; i++) {
+                max = Math.max(max, Math.abs(num[i] - num[i-1]));
+            }
+            max = Math.max(max, Math.abs(num[0] - num[num.length-1]));
+            System.out.println(max);
+        }
+    }
+}
+
        Problem 11536 줄 세우기
 import java.io.BufferedReader;
 import java.io.IOException;
