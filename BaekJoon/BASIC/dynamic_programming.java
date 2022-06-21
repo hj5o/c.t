@@ -100,6 +100,28 @@ public class Main {
     }
 }
 
+       Problem 1912 연속합
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        int[] dp = new int[N];
+        for (int i=0; i<N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        dp[0] = arr[0];
+        int max = arr[0];
+        for (int i=1; i<arr.length; i++) {
+            dp[i] = Math.max(dp[i-1] + arr[i], arr[i]);
+            max = Math.max(max, dp[i]);
+        }
+        System.out.println(max);
+    }
+}
+
        Problem 1932 정수 삼각형
 단순히 위에서 아래로 내려오는 최대 경로가 아님
 이진트리로 부모 노드를 거치지 않으면 같은 차수에 높은 숫자가 있어도 채택할 수 없음
