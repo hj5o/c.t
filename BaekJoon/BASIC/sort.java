@@ -90,6 +90,36 @@ public class Main {
     }
 }
 
+       Problem 1764 듣보잡
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        HashSet<String> hear = new HashSet<>();
+        ArrayList<String> list = new ArrayList<>();
+
+        for (int i=0; i<N; i++) {
+            hear.add(sc.next());
+        }
+
+        for (int i=0; i<M; i++) {
+            String s = sc.next();
+            if (hear.contains(s)) {
+                list.add(s);
+            }
+        }
+        Collections.sort(list);
+
+        System.out.println(list.size());
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+}
+
        Problem 2693 N번째 큰 수
 import java.io.BufferedReader;
 import java.io.IOException;
