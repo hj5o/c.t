@@ -1,6 +1,36 @@
 package BaekJoon.BASIC;
-
 /*
+
+       Problem 1302 베스트셀러
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        Map<String, Integer> map = new HashMap<>();
+        int max = 0;
+        for (int i=0; i<N; i++) {
+            String book = sc.next();
+            map.put(book, map.getOrDefault(book, 0) + 1);
+        }
+
+        for (String book : map.keySet()) {
+            max = Math.max(max, map.get(book));
+        }
+
+        List<String> list = new ArrayList<>(map.keySet());
+        Collections.sort(list);
+
+        for (String s : list) {
+            if (max == map.get(s)) {
+                System.out.println(s);
+                break;
+            }
+        }
+    }
+}
+
        Problem 2164 카드2
 import java.io.BufferedReader;
 import java.io.IOException;
