@@ -223,6 +223,46 @@ public class Main {
     }
 }
 
+       Problem 1475 방 번호
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] card = new int[9];
+        buyCard(card);
+        int cnt = 1;
+
+        while (N != 0) {
+            int temp = N % 10;
+
+            if (temp == 9) {
+                temp = 6;
+            }
+            if (card[temp] == 0) {
+                buyCard(card);
+                card[temp]--;
+                cnt++;
+            } else {
+                card[temp]--;
+            }
+
+            N /= 10;
+        }
+        System.out.println(cnt);
+    }
+    public static void buyCard(int[] card) {
+        for (int i=0; i<9; i++) {
+            if (i == 6) {
+                card[i] += 2;
+            } else {
+                card[i] += 1;
+            }
+        }
+    }
+}
+
        Problem 1546 평균
 import java.io.BufferedReader;
 import java.io.IOException;
