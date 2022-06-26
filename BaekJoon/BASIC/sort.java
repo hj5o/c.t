@@ -120,6 +120,32 @@ public class Main {
     }
 }
 
+       Problem 1822 차집합
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        TreeSet<Integer> set = new TreeSet<>();
+
+        for (int i=0; i<A; i++) {
+            set.add(sc.nextInt());
+        }
+        for (int i=0; i<B; i++) {
+            int get_rid = sc.nextInt();
+            if (set.contains(get_rid)) {
+                set.remove(get_rid);
+            }
+        }
+        System.out.println(set.size());
+        for (Integer answer : set) {
+            System.out.print(answer + " ");
+        }
+    }
+}
+
        Problem 2693 N번째 큰 수
 import java.io.BufferedReader;
 import java.io.IOException;
