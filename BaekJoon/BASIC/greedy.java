@@ -300,4 +300,42 @@ public class Main {
         System.out.println(value);
     }
 }
+
+       Problem 20413 MVP 다이아몬드 (Easy)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] rank = new int[4];
+        for (int i=0; i<rank.length; i++) {
+            rank[i] = sc.nextInt();
+        }
+        String m = sc.next();
+        String[] month = m.split("");
+        int sum = 0;
+        int prev = 0;
+        for (int i=0; i<N; i++) {
+            if(month[i].equals("B")) {
+                sum += rank[0] -1 - prev;
+                prev = rank[0] -1 - prev;
+            } else if (month[i].equals("S")) {
+                sum += rank[1] - 1 - prev;
+                prev = rank[1] - 1 - prev;
+            } else if (month[i].equals("G")) {
+                sum += rank[2] - 1 - prev;
+                prev = rank[2] - 1 - prev;
+            } else if (month[i].equals("P")) {
+                sum += rank[3] - 1 - prev;
+                prev = rank[3] - 1 - prev;
+            } else if (month[i].equals("D")) {
+                sum += rank[3];
+                prev = rank[3];
+            }
+        }
+        System.out.println(sum);
+        System.out.println();
+    }
+}
 */
