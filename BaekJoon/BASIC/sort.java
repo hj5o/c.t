@@ -90,6 +90,37 @@ public class Main {
     }
 }
 
+       Problem 1449 수리공 항승
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int L = Integer.parseInt(st.nextToken());
+		int water[] = new int[N];
+		st = new StringTokenizer(br.readLine());
+		for(int i=0; i<N; i++) {
+			water[i] = Integer.parseInt(st.nextToken());
+		}
+
+		Arrays.sort(water);
+		double left = water[0] - 0.5;
+		int cnt = 1;
+		for(int i=0; i<N; i++) {
+			if(left+L < water[i]) {
+				cnt++;
+				left = water[i] - 0.5;
+			}
+		}
+		System.out.println(cnt);
+	}
+}
+
        Problem 1764 듣보잡
 import java.util.*;
 
@@ -575,6 +606,27 @@ public class Main {
             }
         }
         System.out.println(L);
+    }
+}
+
+       Problem 20044 Project Teams
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N*2];
+        for (int i=0; i<arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr);
+        int answer = Integer.MAX_VALUE;
+        for (int i=0; i<N; i++) {
+            answer = Math.min(answer, arr[i] + arr[N*2-1-i]);
+        }
+        System.out.println(answer);
     }
 }
 
