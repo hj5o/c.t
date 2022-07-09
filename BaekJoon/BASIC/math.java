@@ -543,7 +543,7 @@ public class Main {
     }
 }
 
-     Promblem 2581 소수
+     Problem 2581 소수
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -602,6 +602,21 @@ public class Main {
         int l = a*b/g;
         System.out.println(g);
         System.out.println(l);
+    }
+}
+
+       Problem 2869 달팽이는 올라가고 싶다
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double A = sc.nextInt();
+        double B = sc.nextInt();
+        double V = sc.nextInt();
+
+        int answer = (int)Math.ceil((V-B) / (A-B));
+        System.out.println(answer);
     }
 }
 
