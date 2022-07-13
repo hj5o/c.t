@@ -1,3 +1,4 @@
+/*
 package BaekJoon.BASIC;
 
        Problem 1926 그림
@@ -50,3 +51,65 @@ public class Main {
         }
     }
 }
+       Problem 3184 양
+import java.util.Scanner;
+
+public class Main {
+    static int R, C;
+    static char[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int v_cnt;
+    static int o_cnt;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        R = sc.nextInt();
+        C = sc.nextInt();
+        board = new char[R][C];
+        visited = new boolean[R][C];
+        int v = 0;
+        int o = 0;
+        for (int i=0; i<R; i++) {
+            String str = sc.next();
+            for (int j=0; j<C; j++) {
+                board[i][j] = str.charAt(j);
+            }
+        }
+        for (int i=0; i<R; i++) {
+            for (int j=0; j<C; j++) {
+                v_cnt = 0;
+                o_cnt = 0;
+                if (board[i][j] != 'o' && board[i][j] != 'v' && board[i][j] != '.' &&!visited[i][j]) {
+                    dfs(i,j);
+                    if (v_cnt >= o_cnt) {
+                        v += v_cnt;
+                    } else {
+                        o += o_cnt;
+                    }
+                }
+            }
+        }
+        System.out.println(o + " " + v);
+    }
+    private static void dfs(int x, int y) {
+        visited[x][y] = true;
+        if (board[x][y] == 'v') {
+            v_cnt++;
+        } else if (board[x][y] == 'o') {
+            o_cnt++;
+        }
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < R && ny < C) {
+                if (board[nx][ny] != '#' && !visited[nx][ny]) {
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+*/
