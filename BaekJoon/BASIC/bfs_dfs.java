@@ -51,6 +51,63 @@ public class Main {
         }
     }
 }
+
+       Problem 2449 단지번호붙이기
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    static int N, cnt;
+    static int[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int[] area;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        board = new int[N][N];
+        visited = new boolean[N][N];
+        area = new int[N*N];
+        for (int i=0; i<N; i++) {
+            String str = sc.next();
+            for (int j=0; j<N; j++) {
+                board[i][j] = str.charAt(j);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                if (board[i][j] == 1 && !visited[i][j]) {
+                    cnt++;
+                    dfs(i, j);
+                }
+            }
+        }
+        Arrays.sort(area);
+        System.out.println(cnt);
+        for (int i=0; i<area.length; i++) {
+            if (area[i] != 0) {
+                System.out.println(area[i]);
+            }
+        }
+
+    }
+    private static void dfs(int x, int y) {
+        visited[x][y] = true;
+        int nx, ny;
+        area[cnt]++;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
+                if (board[nx][ny] == 1 && !visited[nx][ny]) {
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+
        Problem 3184 양
 import java.util.Scanner;
 
