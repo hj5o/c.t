@@ -169,4 +169,50 @@ public class Main {
         }
     }
 }
+
+       Problem 14716 현수막
+import java.util.Scanner;
+
+public class Main {
+    static int N, M, cnt;
+    static int[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1, 0, -1, 0, 1, 1, -1, -1};
+    static int[] dy = {0, 1, 0, -1, 1, -1, 1, -1};
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new int[N][M];
+        visited = new boolean[N][M];
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                board[i][j] = sc.nextInt();
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                if (board[i][j] == 1 && !visited[i][j]) {
+                    dfs(i, j);
+                    cnt++;
+                }
+            }
+        }
+        System.out.println(cnt);
+    }
+    private static void dfs(int x, int y) {
+        visited[x][y] = true;
+        int nx, ny;
+        for (int i=0; i<8; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
+                if (board[nx][ny] == 1 && !visited[nx][ny]) {
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
 */
