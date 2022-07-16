@@ -108,6 +108,62 @@ public class Main {
     }
 }
 
+       Problem 2468 안전 영역
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    static int N;
+    static int[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        board = new int[N][N];
+        visited = new boolean[N][N];
+        int max = Integer.MIN_VALUE;
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                board[i][j] = sc.nextInt();
+                if (max < board[i][j]) {
+                    max = Math.max(max, board[i][j]);
+                }
+            }
+        }
+        int[] cnt = new int[max];
+        for (int h=0; h<max; h++) {
+            int section = 0;
+            for (int i=0; i<N; i++) {
+                for (int j=0; j<N; j++) {
+                    if (board[i][j] > h && !visited[i][j]) {
+                        dfs(i, j, h);
+                        section++;
+                    }
+                }
+            }
+            cnt[h] = section;
+            visited = new boolean[N][N];
+        }
+        Arrays.sort(cnt);
+        System.out.println(cnt[cnt.length-1]);
+    }
+    private static void dfs(int x, int y, int height) {
+        visited[x][y] = true;
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
+                if (board[nx][ny] > height && !visited[nx][ny]) {
+                    dfs(nx, ny, height);
+                }
+            }
+        }
+    }
+}
+
        Problem 3184 양
 import java.util.Scanner;
 
