@@ -55,6 +55,30 @@ public class math {
     }
 }
 
+       Problem 1049 기타줄
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int[] p = new int[M];
+        int[] u = new int[M];
+        for (int i=0; i<M; i++) {
+            p[i] = sc.nextInt();
+            u[i] = sc.nextInt();
+        }
+        Arrays.sort(p);
+        Arrays.sort(u);
+        int min = Integer.MAX_VALUE;
+        min = Math.min(((N / 6) + 1) * p[0], N * u[0]);
+        min = Math.min(min, ((N / 6)) * p[0] + (N % 6) * u[0]);
+        System.out.println(min);
+    }
+}
+
        Problem 1057 토너먼트
 import java.util.Scanner;
 
