@@ -40,16 +40,17 @@ HOUR	COUNT
 본 문제는 Kaggle의 "Austin Animal Center Shelter Intakes and Outcomes"에서 제공하는 데이터를 사용하였으며 ODbL의 적용을 받습니다.
 */
 
+with recursive temp as (
+    select 0 as hour
+    union all
+    select hour+1
+    from temp
+    where hour < 23
+)
 
-WITH RECURSIVE
-    cte AS
-        ( SELECT 0 AS HOUR
-UNION ALL
-SELECT HOUR + 1
-FROM cte
-WHERE HOUR < 23 )
-SELECT      cte.hour, COUNT(ani.ANIMAL_ID)
-FROM        cte
-                LEFT JOIN   ANIMAL_OUTS AS ani
-                            ON          cte.hour = HOUR(ani.DATETIME)
-GROUP BY    cte.hour
+SELECT t.hour, count(o.animal_id)
+from temp t
+    left join animal_outs o
+        on t.hour = hour(o.datetime)
+group by t.hour
+order by t.hour
