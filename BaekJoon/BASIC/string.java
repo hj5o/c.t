@@ -29,6 +29,40 @@ public class Main {
     }
 }
 
+       Problem 5635 생일
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        String[] answer = new String[N];
+        int[] day = new int[N];
+        for (int i=0; i<N; i++) {
+            answer[i] = sc.next();
+            int d = sc.nextInt();
+            int m = sc.nextInt();
+            int y = sc.nextInt();
+            int sum = d + m * 30 + y * 365;
+            day[i] = sum;
+        }
+        int[] c = new int[N];
+        c = day.clone();
+        Arrays.sort(day);
+        for (int i=0; i<N; i++) {
+            if (day[day.length-1] == c[i]) {
+                System.out.println(answer[i]);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            if (day[0] == c[i]) {
+                System.out.println(answer[i]);
+            }
+        }
+    }
+}
+
        Problem 11656 접미사 배열
 import java.io.BufferedReader;
 import java.io.IOException;
