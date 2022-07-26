@@ -933,6 +933,31 @@ public class Main {
         }
     }
 }
+
+       Problem 14916 거스름돈
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int cnt = 0;
+        while (N > 0) {
+            if (N % 5 == 0) {
+                cnt = N / 5 + cnt;
+                break;
+            }
+            N -= 2;
+            cnt++;
+        }
+        if (N < 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(cnt);
+        }
+    }
+}
+
        Problem 15965 K번째 소수
 import java.io.BufferedReader;
 import java.io.IOException;
