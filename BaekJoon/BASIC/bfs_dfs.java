@@ -1,6 +1,49 @@
 /*
 package BaekJoon.BASIC;
 
+       Problem 1697 숨바꼭질
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+        int max = 200001;
+        boolean[] visited = new boolean[max];
+        int[] cnt = new int[max];
+        Queue<Integer> q = new LinkedList<>();
+        q.add(N);
+        cnt[N] = 0;
+        visited[N] = true;
+
+        while (!q.isEmpty()) {
+            int now = q.remove();
+
+            if (now + 1 < max && !visited[now + 1]) {
+                q.add(now + 1);
+                visited[now + 1] = true;
+                cnt[now + 1] = cnt[now] + 1;
+            }
+
+            if (now - 1 >= 0 && !visited[now - 1]) {
+                q.add(now - 1);
+                visited[now - 1] = true;
+                cnt[now - 1] = cnt[now] + 1;
+            }
+
+            if (now * 2 < max && !visited[now * 2]) {
+                q.add(now * 2);
+                visited[now * 2] = true;
+                cnt[now * 2] = cnt[now] + 1;
+            }
+        }
+        System.out.println(cnt[K]);
+    }
+}
+
        Problem 1926 그림
 import java.util.*;
 
