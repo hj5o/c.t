@@ -150,6 +150,73 @@ public class Main {
     }
 }
 
+       Problem 3085 사탕 게임
+import java.util.Scanner;
+
+public class Main {
+    static int N;
+    static char[][] board;
+    static int max = Integer.MIN_VALUE;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        board = new char[N][N];
+        for (int i=0; i<N; i++) {
+            String s = sc.next();
+            for (int j=0; j<N; j++) {
+                board[i][j] = s.charAt(j);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N-1; j++) {
+                char temp = board[i][j];
+                board[i][j] = board[i][j+1];
+                board[i][j+1] = temp;
+                check(board);
+                temp = board[i][j];
+                board[i][j] = board[i][j+1];
+                board[i][j+1] = temp;
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N-1; j++) {
+                char temp = board[j][i];
+                board[j][i] = board[j+1][i];
+                board[j+1][i] = temp;
+                check(board);
+                temp = board[j][i];
+                board[j][i] = board[j+1][i];
+                board[j+1][i] = temp;
+            }
+        }
+        System.out.println(max);
+    }
+    private static void check(char[][] map) {
+        for (int i=0; i<N; i++) {
+            int cnt = 1;
+            for (int j=0; j<N-1; j++) {
+                if (map[i][j] == map[i][j+1]) {
+                    cnt++;
+                } else {
+                    cnt = 1;
+                }
+                max = Math.max(max, cnt);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            int cnt = 1;
+            for (int j=0; j<N-1; j++) {
+                if (map[j][i] == map[j+1][i]) {
+                    cnt++;
+                } else {
+                    cnt = 1;
+                }
+                max = Math.max(max, cnt);
+            }
+        }
+    }
+}
+
      Problem  7586 덩치
 import java.io.BufferedReader;
 import java.io.IOException;
