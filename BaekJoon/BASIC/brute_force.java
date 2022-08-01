@@ -1,6 +1,53 @@
 package BaekJoon.BASIC;
 /*
 
+       Problem 1107 리모컨
+import java.util.Scanner;
+
+public class Main {
+    static boolean[] broken = new boolean[10];
+    static int solve(int i) {
+        if (i == 0) {
+            if (broken[0]) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        int len = 0;
+        while (i > 0) {
+            if (broken[i % 10]) {
+                return 0;
+            }
+            len += 1;
+            i /= 10;
+        }
+        return len;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+
+        int ans = Math.abs(N-100);
+
+        for (int i=0; i<M; i++) {
+            broken[sc.nextInt()] = true;
+        }
+        for (int i=0; i<999999; i++) {
+            int j = i;
+            int len = solve(j);
+            if (len > 0) {
+                int cnt = Math.abs(j - N);
+                if (ans > len + cnt) {
+                    ans = len + cnt;
+                }
+            }
+        }
+        System.out.println(ans);
+    }
+}
+
        Problem  1476 날짜 계산
 import java.io.BufferedReader;
 import java.io.IOException;
