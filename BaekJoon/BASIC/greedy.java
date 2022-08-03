@@ -31,6 +31,38 @@ public class Main {
     }
 }
 
+       Problem 1246 온라인 판매
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int[] arr = new int [M];
+        for (int i=0; i<M; i++) {
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr);
+        int result = 0;
+        int val = 0;
+        int max = Integer.MIN_VALUE;
+        for (int i=0; i<M; i++) {
+            if (M-1 < N) {
+                result = arr[i] * (M - i);
+            } else {
+                result = arr[i] * N;
+            }
+            if (max < result) {
+                val = arr[i];
+                max = result;
+            }
+        }
+        System.out.println(val + " " + max);
+    }
+}
+
        Problem 1343 폴리오미노
 import java.io.BufferedReader;
 import java.io.IOException;
