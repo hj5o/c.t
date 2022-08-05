@@ -383,6 +383,7 @@ public class Main {
 4를 채울 때
 9
 dp[i] = dp[i-1] + 2*dp[i-2]
+
        Problem 11726 2xn 타일링 2
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -400,6 +401,37 @@ public class Main {
             dp[i] = (dp[i-1] + 2*dp[i-2]) % 10007;
         }
         System.out.println(dp[N]);
+    }
+}
+
+       Problem 12865 평범한 배낭
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+        int[] W = new int[N+1];
+        int[] V = new int[N+1];
+        int[][] dp = new int[N+1][K+1];
+        W[0] = 0;
+        V[0] = 0;
+        dp[0][0] = 0;
+        for (int i=1; i<=N; i++) {
+            W[i] = sc.nextInt();
+            V[i] = sc.nextInt();
+        }
+        for (int i=1; i<=N; i++) {
+            for (int j=1; j<=K; j++) {
+                if (W[i] > j) {
+                    dp[i][j] = dp[i-1][j];
+                } else {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j - W[i]] + V[i]);
+                }
+            }
+        }
+        System.out.println(dp[N][K]);
     }
 }
 

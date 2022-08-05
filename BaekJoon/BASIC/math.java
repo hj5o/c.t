@@ -845,6 +845,35 @@ public class Main {
     }
 }
 
+       Problem 7571 점 모으기
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int[] x = new int[M];
+        int[] y = new int[M];
+        for (int i=0; i<M; i++) {
+            x[i] = sc.nextInt();
+            y[i] = sc.nextInt();
+        }
+        Arrays.sort(x);
+        Arrays.sort(y);
+        int x_median = x[x.length/2];
+        int y_median = y[y.length/2];
+        int x_sum = 0;
+        int y_sum = 0;
+        for (int i=0; i<M; i++) {
+            x_sum += Math.abs(x[i] - x_median);
+            y_sum += Math.abs(y[i] - y_median);
+        }
+        System.out.println(x_sum + y_sum);
+    }
+}
+
        Problem 10610 30
 import java.io.BufferedReader;
 import java.io.IOException;
