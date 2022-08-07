@@ -79,6 +79,33 @@ public class Main {
         System.out.println(dp[N]);
     }
 }
+
+       Problem 1535 안녕
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] hp = new int[N+1];
+        int[] emo = new int[N+1];
+        int[] dp = new int[100];
+        for (int i=0; i<N; i++) {
+            hp[i] = sc.nextInt();
+        }
+        for (int i=0; i<N; i++) {
+            emo[i] = sc.nextInt();
+        }
+
+        for (int i=0; i<N; i++) {
+            for (int j=99; j>=hp[i]; j--) {
+                dp[j] = Math.max(dp[j], emo[i] + dp[j - hp[i]]);
+            }
+        }
+        System.out.println(dp[99]);
+    }
+}
+
        Problem 1699 제곱수의 합
 import java.io.*;
 
