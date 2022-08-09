@@ -95,6 +95,46 @@ public class Main {
     }
 }
 
+       Problem 2210 숫자판 점프
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Main {
+    public static HashSet<String> set = new HashSet<>();
+    public static int[][] board;
+    public static int[] dx = {1, 0, -1, 0};
+    public static int[] dy = {0, 1, 0, -1};
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        board = new int[5][5];
+        for (int i=0; i<5; i++) {
+            for (int j=0; j<5; j++) {
+                board[i][j] = sc.nextInt();
+            }
+        }
+        for (int i=0; i<5; i++) {
+            for (int j=0; j<5; j++) {
+                dfs(i, j, 0, "");
+            }
+        }
+        System.out.println(set.size());
+    }
+    public static void dfs(int x, int y, int cnt, String str) {
+        if (cnt == 6) {
+            set.add(str);
+            return;
+        }
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < 5 && ny < 5) {
+                dfs(nx, ny, cnt+1, str + board[nx][ny]);
+            }
+        }
+    }
+}
+
        Problem 2449 단지번호붙이기
 import java.util.Arrays;
 import java.util.Scanner;
