@@ -233,6 +233,23 @@ public class Main {
     }
 }
 
+       Problem 2075 N번째 큰 수
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N*N];
+        for (int i=0; i<N*N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.println(arr[arr.length-N]);
+    }
+}
+
        Problem 2693 N번째 큰 수
 import java.io.BufferedReader;
 import java.io.IOException;

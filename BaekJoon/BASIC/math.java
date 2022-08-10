@@ -402,7 +402,7 @@ public class Main {
     }
 }
 
-       Problem 1789 (수 들의 합)
+       Problem 1789 수 들의 합
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -666,6 +666,24 @@ public class Main {
 
         int answer = (int)Math.ceil((V-B) / (A-B));
         System.out.println(answer);
+    }
+}
+
+       Problem 2941 크로아티아 알파벳
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] arr = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
+        String str = sc.next();
+
+        for (int i=0; i<arr.length; i++) {
+            if (str.contains(arr[i])) {
+                str = str.replace(arr[i], "#");
+            }
+        }
+        System.out.println(str.length());
     }
 }
 
