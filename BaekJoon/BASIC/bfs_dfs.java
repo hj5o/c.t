@@ -376,4 +376,57 @@ public class Main {
         }
     }
 }
+
+       Problem 21736 헌내기는 친구가 필요해
+import java.util.Scanner;
+
+public class Main {
+    static int N, M, cnt;
+    static char[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new char[N][M];
+        visited = new boolean[N][M];
+        for (int i=0; i<N; i++) {
+            String str = sc.next();
+            for (int j=0; j<M; j++) {
+                board[i][j] = str.charAt(j);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                if (board[i][j] == 'I') {
+                    dfs(i, j);
+                }
+            }
+        }
+        if (cnt >= 1) {
+            System.out.println(cnt);
+        } else {
+            System.out.println("TT");
+        }
+    }
+    public static void dfs(int x, int y) {
+        visited[x][y] = true;
+        if (board[x][y] == 'P') {
+            cnt++;
+        }
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
+                if (!visited[nx][ny] && board[nx][ny] != 'X') {
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+
 */
