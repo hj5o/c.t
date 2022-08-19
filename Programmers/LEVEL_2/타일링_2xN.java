@@ -1,3 +1,4 @@
+/*
 package Programmers.LEVEL_2;
 
 class Solution {
@@ -15,4 +16,4 @@ class Solution {
         int n = 4;
         System.out.println(s.solution(n));
     }
-}
+}*/
