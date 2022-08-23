@@ -95,6 +95,56 @@ public class Main {
     }
 }
 
+       Problem 2178 미로찾기
+import java.util.*;
+
+public class Main {
+    static int N, M;
+    static int[][] board;
+    static int[][] visited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int answer = 0;
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new int[N][M];
+        visited = new int[N][M];
+        for (int i=0; i<N; i++) {
+            String s = sc.next();
+            for (int j=0; j<M; j++) {
+                board[i][j] = s.charAt(j) - '0';
+            }
+        }
+        bfs(board, visited);
+        System.out.println(visited[N-1][M-1]);
+
+    }
+    static void bfs(int[][] board, int[][] visited) {
+        int x = 0;
+        int y = 0;
+        visited[x][y] = 1;
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{x,y});
+        while (!q.isEmpty()) {
+            int[] c = q.poll();
+            int cx = c[0];
+            int cy = c[1];
+            for (int i=0; i<4; i++) {
+                int nx = cx + dx[i];
+                int ny = cy + dy[i];
+                if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
+                    if (visited[nx][ny] == 0 && board[nx][ny] != 0) {
+                        visited[nx][ny] = visited[cx][cy] + 1;
+                        q.add(new int[] {nx, ny});
+                    }
+                }
+            }
+        }
+    }
+}
+
        Problem 2210 숫자판 점프
 import java.util.HashSet;
 import java.util.Scanner;
