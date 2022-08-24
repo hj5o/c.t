@@ -863,6 +863,30 @@ public class Main {
     }
 }
 
+       Problem 5347 LCM
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        for (int tc=0; tc<T; tc++) {
+            long N = sc.nextLong();
+            long M = sc.nextLong();
+            System.out.println(N * M / gcd(N, M));
+        }
+
+    }
+    static long gcd(long a, long b) {
+        while (b != 0) {
+            long r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
+    }
+}
+
        Problem 7571 점 모으기
 import java.util.Arrays;
 import java.util.Scanner;
