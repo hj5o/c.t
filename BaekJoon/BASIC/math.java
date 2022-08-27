@@ -567,6 +567,32 @@ public class Main {
     }
 }
 
+       Problem 2490 윷놀이
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        for (int i=0; i<3; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int d = sc.nextInt();
+            if (a+b+c+d == 1) {
+                System.out.println("C");
+            } else if (a+b+c+d == 2) {
+                System.out.println("B");
+            } else if (a+b+c+d == 3) {
+                System.out.println("A");
+            } else if (a+b+c+d == 0) {
+                System.out.println("D");
+            } else if (a+b+c+d == 4) {
+                System.out.println("E");
+            }
+        }
+    }
+}
+
        Problem 2577 숫자의 개수
 import java.io.BufferedReader;
 import java.io.IOException;
