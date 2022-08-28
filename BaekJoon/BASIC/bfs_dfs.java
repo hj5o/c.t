@@ -381,6 +381,78 @@ public class Main {
     }
 }
 
+       Problem 10026 적록색약
+import java.util.Scanner;
+
+public class Main {
+    static char[][] board;
+    static boolean[][] visited, rgvisited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int N, cnt, rgcnt;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        board = new char[N][N];
+        visited = new boolean[N][N];
+        rgvisited = new boolean[N][N];
+        for (int i=0; i<N; i++) {
+            String s = sc.next();
+            for (int j=0; j<N; j++) {
+                board[i][j] = s.charAt(j);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                if (!visited[i][j]) {
+                    dfs(i, j);
+                    cnt++;
+                }
+                if (!rgvisited[i][j]) {
+                    rgdfs(i, j);
+                    rgcnt++;
+                }
+            }
+        }
+        System.out.println(cnt + " " + rgcnt);
+    }
+    static void dfs(int x, int y) {
+        visited[x][y] = true;
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >=0 && nx < N && ny < N) {
+                if (!visited[nx][ny] && board[nx][ny] == board[x][y]) {
+                    visited[nx][ny] = true;
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+    static void rgdfs(int x, int y) {
+        rgvisited[x][y] = true;
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >=0 && nx < N && ny < N) {
+                if(!rgvisited[nx][ny]) {
+                    if(board[x][y] == 'G' || board[x][y] == 'R') {
+                        if (board[nx][ny] == 'R' || board[nx][ny] == 'G') {
+                            rgvisited[nx][ny] = true;
+                            rgdfs(nx, ny);
+                        }
+                    } else if (board[x][y] == board[nx][ny]) {
+                        rgvisited[nx][ny] = true;
+                        rgdfs(nx, ny);
+                    }
+                }
+            }
+        }
+    }
+}
+
        Problem 14716 현수막
 import java.util.Scanner;
 
