@@ -359,6 +359,70 @@ public class Main {
     }
 }
 
+       Problem 3187 양치기 꿍
+import java.util.Scanner;
+
+public class Main {
+    static char[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int N, M, sheep, wolf, k, v;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new char[N][M];
+        visited = new boolean[N][M];
+        for (int i=0; i<N; i++) {
+            String s = sc.next();
+            for (int j=0; j<M; j++) {
+                board[i][j] = s.charAt(j);
+                if (board[i][j] == 'k') {
+                    sheep++;
+                } else if (board[i][j] == 'v') {
+                    wolf++;
+                }
+            }
+        }
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                if (board[i][j] != '#' && !visited[i][j]) {
+                    k = 0;
+                    v = 0;
+                    dfs(i, j);
+
+                    if (v >= k) {
+                        sheep -= k;
+                    } else {
+                        wolf -= v;
+                    }
+                }
+            }
+        }
+        System.out.println(sheep + " " + wolf);
+    }
+    static void dfs(int x, int y) {
+        visited[x][y] = true;
+        if (board[x][y] == 'k') {
+            k++;
+        } else if (board[x][y] == 'v') {
+            v++;
+        }
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
+                if (!visited[nx][ny] && board[nx][ny] != '#') {
+                    visited[nx][ny] = true;
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+
        Problem 9372 상근이의 여행
 import java.util.Scanner;
 
