@@ -183,6 +183,30 @@ public class Main {
     }
 }
 
+       Problem 1965 상자넣기
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N+1];
+        for (int i=0; i<N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int cnt = 0;
+        int[] dp = new int[N+1];
+        for (int i=0; i<=N; i++) {
+            for (int j=0; j<=i; j++) {
+                if (arr[j] < arr[i])
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+            }
+            cnt = Math.max(cnt, dp[i]);
+        }
+        System.out.println(cnt+1);
+    }
+}
+
        Problem 2156 포도주 시식
 계단 오르기 문제와 비슷하다.
 다만 계단 오르기는 마지막 계단을 반드시 밟아야했는데, 포도주 시식문제는 그런 조건 없다.
