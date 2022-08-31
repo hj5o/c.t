@@ -563,6 +563,49 @@ public class Main {
     }
 }
 
+       Problem 16173 점프왕 쩰리
+import java.util.*;
+
+public class Main {
+    static int[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1,0};
+    static int[] dy = {0,1};
+    static int N;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        board = new int[N][N];
+        visited = new boolean[N][N];
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                board[i][j] = sc.nextInt();
+            }
+        }
+        dfs(0,0);
+        System.out.println("Hing");
+
+    }
+    static void dfs(int x, int y) {
+        visited[x][y] = true;
+        if (board[x][y] == -1) {
+            System.out.println("HaruHaru");
+            System.exit(0);
+        }
+        int nx, ny;
+        for (int i=0; i<2; i++) {
+            nx = x + dx[i] * board[x][y];
+            ny = y + dy[i] * board[x][y];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
+                if (!visited[nx][ny]) {
+                    visited[nx][ny] = true;
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+
        Problem 21736 헌내기는 친구가 필요해
 import java.util.Scanner;
 
