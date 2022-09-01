@@ -517,6 +517,61 @@ public class Main {
     }
 }
 
+       Problem 11123 양 한마리... 양 두마리...
+import java.util.Scanner;
+
+public class Main {
+    static char[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int H, W, cnt;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int[] ans = new int[T];
+        for (int tc=0; tc<T; tc++) {
+            H = sc.nextInt();
+            W = sc.nextInt();
+            board = new char[H][W];
+            visited = new boolean[H][W];
+            for (int i=0; i<H; i++) {
+                String s = sc.next();
+                for (int j=0; j<W; j++) {
+                    board[i][j] = s.charAt(j);
+                }
+            }
+            for (int i=0; i<H; i++) {
+                for (int j=0; j<W; j++) {
+                    if (board[i][j] == '#') {
+                        cnt++;
+                        dfs(i, j);
+                    }
+                }
+            }
+            ans[tc] = cnt;
+            cnt = 0;
+        }
+        for (int an : ans) {
+            System.out.println(an);
+        }
+    }
+    static void dfs(int x, int y) {
+        visited[x][y] = true;
+        board[x][y] = '.';
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < H && ny < W) {
+                if (!visited[nx][ny] && board[nx][ny] != '.') {
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+
        Problem 14716 현수막
 import java.util.Scanner;
 
