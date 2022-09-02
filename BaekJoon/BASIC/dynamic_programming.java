@@ -351,6 +351,24 @@ public class Main {
         }
     }
 }
+
+       Problem 9625 BABBA
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] dp = new int[47];
+        dp[0] = 0;
+        dp[1] = 1;
+        for (int i=2; i<47; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        System.out.println(dp[N-1] + " " + dp[N]);
+    }
+}
+
        Problem 9655~9661 돌 게임 1~7
 돌을 1, 3, 4개 가져갈 수 있다.
 마지막 돌을 가져가는 사람이 이긴다.
