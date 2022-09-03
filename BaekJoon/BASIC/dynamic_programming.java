@@ -397,6 +397,34 @@ public class Main {
     }
 }
 
+       Problem 10211 Maximum Subarray
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        for (int tc=0; tc<T; tc++) {
+            int N = sc.nextInt();
+            int[] arr = new int[N];
+            int[] dp = new int[N];
+            for (int i=0; i<N; i++) {
+                arr[i] = sc.nextInt();
+            }
+            int max = arr[0];
+            dp[0] = arr[0];
+            for (int i=1; i<N; i++) {
+                if (dp[i-1] < 0) {
+                    dp[i-1] = 0;
+                }
+                dp[i] = dp[i-1] + arr[i];
+                max = Math.max(max, dp[i]);
+            }
+            System.out.println(max);
+        }
+    }
+}
+
        Problem 14494 다이나믹이 뭐예요?
 import java.util.Scanner;
 
