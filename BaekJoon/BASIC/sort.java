@@ -89,7 +89,32 @@ public class Main {
         }
     }
 }
-       
+
+       Problem 1448 삼각형 만들기
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        Integer[] arr = new Integer[N];
+        for (int i=0; i<N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr, Collections.reverseOrder());
+        int ans = 0;
+        for (int i=0; i<N-2; i++) {
+            if (arr[i] < arr[i+1] + arr[i+2]) {
+                ans = Math.max(ans, arr[i] + arr[i+1] + arr[i+2]);
+            }
+        }
+        if (ans == 0) {
+            ans = -1;
+        }
+        System.out.println(ans);
+    }
+}
+
        Problem 1449 수리공 항승
 import java.io.BufferedReader;
 import java.io.IOException;
