@@ -37,6 +37,37 @@ public class Main {
     }
 }
 
+       Problem 1246 온라인 판매
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int[] arr = new int[M];
+        for (int i=0; i<M; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int ans = 0;
+        int val = 0;
+        int max = Integer.MIN_VALUE;
+        Arrays.sort(arr);
+        for (int i=0; i<M; i++) {
+            if (M-i < N) {
+                ans = arr[i] * (M-i);
+            } else {
+                ans = arr[i] * N;
+            }
+            if (max < ans) {
+                val = arr[i];
+                max = ans;
+            }
+        }
+        System.out.println(val + " " + max);
+    }
+}
+
        Problem 1337 올바른 배열
 import java.util.Arrays;
 import java.util.Scanner;
