@@ -1,6 +1,49 @@
 /*
 package BaekJoon.BASIC;
 
+       Problem 1388 바닥 장식
+import java.util.*;
+
+public class Main {
+    static char[][] board;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int N, M, cnt;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new char[N][M];
+        for (int i=0; i<N; i++) {
+            String s = sc.next();
+            for (int j=0; j<M; j++) {
+                board[i][j] = s.charAt(j);
+            }
+        }
+        for (int i=0; i<N; i++) {
+            int tmp = 0;
+            for (int j=0; j<M; j++) {
+                if (board[i][j] == '|') {
+                    tmp = 0;
+                } else if (++tmp == 1) {
+                    cnt++;
+                }
+            }
+        }
+        for (int j=0; j<M; j++) {
+            int tmp = 0;
+            for (int i=0; i<N; i++) {
+                if (board[i][j] == '-') {
+                    tmp = 0;
+                } else if (++tmp == 1) {
+                    cnt++;
+                }
+            }
+        }
+        System.out.println(cnt);
+    }
+}
+
        Problem 1697 숨바꼭질
 import java.util.LinkedList;
 import java.util.Queue;
