@@ -340,6 +340,38 @@ public class Main {
     }
 }
 
+       Problem 2606 바이러스
+import java.util.Scanner;
+
+public class Main {
+    static int[][] board;
+    static boolean[] visited;
+    static int N, M, cnt;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new int[N+1][N+1];
+        visited = new boolean[N+1];
+        for (int i=0; i<M; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            board[a][b] = board[b][a] = 1;
+        }
+        dfs(1);
+        System.out.println(cnt);
+    }
+    static void dfs(int x) {
+        visited[x] = true;
+        for (int i=1; i<=N; i++) {
+            if(board[x][i] == 1 && !visited[i]) {
+                cnt++;
+                dfs(i);
+            }
+        }
+    }
+}
+
        Problem 3184 양
 import java.util.Scanner;
 
