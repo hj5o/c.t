@@ -567,6 +567,28 @@ public class Main {
     }
 }
 
+       Problem 2455 지능형 기차 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int board = 0;
+        int cnt = 0;
+        for (int i=0; i<4; i++) {
+            int out = sc.nextInt();
+            int in = sc.nextInt();
+            if (out == 0) {
+                board = in;
+            } else {
+                board = board - out + in;
+            }
+            cnt = Math.max(cnt, board);
+        }
+        System.out.println(cnt);
+    }
+}
+
        Problem 2490 윷놀이
 import java.util.Scanner;
 
