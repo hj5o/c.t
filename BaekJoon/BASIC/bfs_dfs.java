@@ -498,6 +498,85 @@ public class Main {
     }
 }
 
+       Problem 4179 불!
+import java.util.*;
+
+public class Main {
+    static char[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static Queue<Point> jq = new LinkedList<>();
+    static Queue<Point> fq = new LinkedList<>();
+    static int R,C, ans;
+    static class Point {
+        int x, y, cnt;
+        public Point (int x, int y, int cnt) {
+            this.x = x;
+            this.y = y;
+            this.cnt = cnt;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        R = sc.nextInt();
+        C = sc.nextInt();
+        board = new char[R][C];
+        visited = new boolean[R][C];
+        for (int i=0; i<R; i++) {
+            String s = sc.next();
+            for (int j=0; j<C; j++) {
+                board[i][j] = s.charAt(j);
+                if (board[i][j] == 'J') {
+                    jq.add(new Point(i, j, 0));
+                    visited[i][j] = true;
+                }
+                if (board[i][j] == 'F') {
+                    fq.add(new Point(i, j, 0));
+                    visited[i][j] = true;
+                }
+            }
+        }
+        bfs();
+    }
+    static void bfs() {
+        while (!jq.isEmpty()) {
+            for (int i=0; i<fq.size(); i++) {
+                Point point = fq.poll();
+                for (int j=0; j<4; j++) {
+                    int nx = point.x + dx[j];
+                    int ny = point.y + dy[j];
+                    if (nx >= 0 && ny >= 0 && nx < R && ny < C) {
+                        if (board[nx][ny] != '#' && !visited[nx][ny]) {
+                            fq.add(new Point(nx, ny, 0));
+                            board[nx][ny] = 'F';
+                            visited[nx][ny] = true;
+                        }
+                    }
+                }
+            }
+            for (int i=0; i<jq.size(); i++) {
+                Point point = jq.poll();
+                for (int j=0; j<4; j++) {
+                    int nx = point.x + dx[j];
+                    int ny = point.y + dy[j];
+                    if (nx >= 0 && ny >= 0 && nx < R && ny < C) {
+                        if (board[nx][ny] != '#' && !visited[nx][ny]) {
+                            jq.add(new Point(nx, ny, point.cnt + 1));
+                            board[nx][ny] = 'J';
+                            visited[nx][ny] = true;
+                        }
+                    } else {
+                        System.out.println(point.cnt + 1);
+                        return;
+                    }
+                }
+            }
+        }
+        System.out.println("IMPOSSIBLE");
+    }
+}
+
        Problem 9372 상근이의 여행
 import java.util.Scanner;
 
