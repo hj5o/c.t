@@ -340,6 +340,99 @@ public class Main {
     }
 }
 
+       Problem 2573 빙산
+import java.util.*;
+
+public class Main {
+    static int[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int N, M;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        board = new int[N][M];
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                board[i][j] = sc.nextInt();
+            }
+        }
+        int ans = 0;
+        while (true) {
+            int curLand = iceLand();
+            if (curLand >= 2) {
+                break;
+            } else if (curLand == 0) {
+                ans = 0;
+                break;
+            }
+            bfs();
+            ans++;
+        }
+        System.out.println(ans);
+    }
+    static void dfs(int x, int y, boolean[][] visited) {
+        visited[x][y] = true;
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
+                if (board[nx][ny] != 0 && !visited[nx][ny]) {
+                    dfs(nx, ny, visited);
+                }
+            }
+        }
+    }
+    static int iceLand() {
+        int cnt = 0;
+        visited = new boolean[N][M];
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                if (board[i][j] != 0 && !visited[i][j]) {
+                    dfs(i, j, visited);
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+    static void bfs() {
+        Queue<int []> q = new LinkedList<>();
+        boolean[][] check = new boolean[N][M];
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                if (board[i][j] != 0) {
+                    q.add(new int[] {i, j});
+                    check[i][j] = true;
+                }
+            }
+        }
+        while (!q.isEmpty()) {
+            int cnt = 0;
+            int nx, ny;
+            int[] cur = q.poll();
+            for (int i=0; i<4; i++) {
+                nx = cur[0] + dx[i];
+                ny = cur[1] + dy[i];
+                if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
+                    if (board[nx][ny] == 0 && !check[nx][ny]) {
+                        cnt++;
+                    }
+                }
+            }
+            if (board[cur[0]][cur[1]] < cnt) {
+                board[cur[0]][cur[1]] = 0;
+            } else {
+                board[cur[0]][cur[1]] -= cnt;
+            }
+        }
+    }
+}
+
        Problem 2606 바이러스
 import java.util.Scanner;
 
