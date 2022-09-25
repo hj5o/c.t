@@ -306,6 +306,40 @@ public class Main {
     }
 }
 
+       Problem 2212 센서
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+
+        if(K >= N) {
+            System.out.println(0);
+            return;
+        }
+        int sum = 0;
+
+        int[] arr = new int[N];
+        for(int i=0; i<N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr);
+
+        Integer[] arr2 = new Integer[N-1];
+        for(int i = 0; i < N-1; i++) {
+            arr2[i] = arr[i + 1] - arr[i];
+        }
+        Arrays.sort(arr2, Collections.reverseOrder());
+
+        for(int i=K-1; i<N-1; i++) {
+            sum += arr2[i];
+        }
+        System.out.println(sum);
+    }
+}
+
        Problem 2693 N번째 큰 수
 import java.io.BufferedReader;
 import java.io.IOException;
