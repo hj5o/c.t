@@ -31,6 +31,34 @@ public class Main {
         }
     }
 }
+
+       Problem 1010 다리 놓기
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        for(int tc=0; tc<T; tc++) {
+            double N = sc.nextInt();
+            double M = sc.nextInt();
+            double ans = 0;
+            double num = 1;
+            for (double i=M; i>M-N; i--) {
+                num *= i;
+            }
+            double num2 = 1;
+            for(double j=N; j>0; j--) {
+                num2 *= j;
+            }
+            ans = num/num2;
+            System.out.printf("%.0f\n", ans);
+        }
+    }
+}
+
+
        Problem 1149 RGB 거리
 import java.io.IOException;
 import java.util.Scanner;
