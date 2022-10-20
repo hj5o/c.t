@@ -1,6 +1,56 @@
 /*
 package BaekJoon.BASIC;
 
+       Problem 1012 유기농 배추
+import java.util.*;
+
+public class Main {
+    static int[][] board;
+    static boolean[][] visited;
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int M, N, K;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        for (int tc=0; tc<T; tc++) {
+            M = sc.nextInt();
+            N = sc.nextInt();
+            K = sc.nextInt();
+            int cnt = 0;
+            board = new int[M][N];
+            visited = new boolean[M][N];
+            for (int i=0; i<K; i++) {
+                int point_x = sc.nextInt();
+                int point_y = sc.nextInt();
+                board[point_x][point_y] = 1;
+            }
+            for (int i=0; i<M; i++) {
+                for (int j=0; j<N; j++) {
+                    if (!visited[i][j] && board[i][j] == 1) {
+                        dfs(i, j);
+                        cnt++;
+                    }
+                }
+            }
+            System.out.println(cnt);
+        }
+    }
+    static void dfs(int x, int y) {
+        visited[x][y] = true;
+        int nx, ny;
+        for (int i=0; i<4; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < M && ny < N) {
+                if (!visited[nx][ny] && board[nx][ny] == 1) {
+                    dfs(nx, ny);
+                }
+            }
+        }
+    }
+}
+
        Problem 1388 바닥 장식
 import java.util.*;
 
