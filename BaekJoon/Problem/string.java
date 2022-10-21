@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 /*
 
      Problem 1157 단어공부

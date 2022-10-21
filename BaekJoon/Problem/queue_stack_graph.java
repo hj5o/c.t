@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 /*
 
        Problem 1302 베스트셀러

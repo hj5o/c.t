@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 
 /*
        Problem 1003 피보나치 함수

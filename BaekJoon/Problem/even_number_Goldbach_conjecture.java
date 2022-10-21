@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 /*
      Problem 6588
 import java.io.IOException;

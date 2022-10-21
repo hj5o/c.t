@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 /*
 
        Problem 1181 단어정렬

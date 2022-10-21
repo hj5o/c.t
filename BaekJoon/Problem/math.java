@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 /*
        Problem 1026 보물
 import java.io.BufferedReader;

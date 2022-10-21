@@ -1,4 +1,4 @@
-package BaekJoon.BASIC;
+package BaekJoon.Problem;
 /*
        Problem 15649 N과 M (1)
 import java.util.*;
