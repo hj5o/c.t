@@ -1,5 +1,27 @@
 package BaekJoon.Problem;
 /*
+
+       Problem 1100 하얀 칸
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char[][] board = new char[8][8];
+        int ans = 0;
+        for (int i=0; i<8; i++) {
+            String s = sc.next();
+            for (int j=0; j<8; j++) {
+                board[i][j] = s.charAt(j);
+                if ((i+j) % 2 == 0 && board[i][j] == 'F') {
+                    ans++;
+                }
+            }
+        }
+        System.out.println(ans);
+    }
+}
+
        Problem 1026 보물
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -360,6 +382,18 @@ public class Main {
     }
 }
 
+       Problem 1550 16진수
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String hex = sc.next();
+        int dec = Integer.parseInt(hex, 16);
+        System.out.println(dec);
+    }
+}
+
        Problem 1676 팩토리얼 0의 개수
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -717,6 +751,24 @@ public class Main {
     }
 }
 
+       Problem 2914 저작권
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int I = sc.nextInt();
+        int ans = 0;
+        if (A == 1) {
+            ans = A*I;
+        } else {
+            ans = A * (I-1) + 1;
+        }
+        System.out.println(ans);
+    }
+}
+
        Problem 2941 크로아티아 알파벳
 import java.util.Scanner;
 
@@ -996,6 +1048,33 @@ public class Main {
     }
 }
 
+       Problem 10162 전자레인지
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int[] btn = {300, 60, 10};
+        int[] ans = new int[3];
+        if (T % 10 != 0) {
+            System.out.println(-1);
+            System.exit(0);
+        }
+        if (T >= btn[0]) {
+            ans[0] += T / btn[0];
+            T %= btn[0];
+        } if (T >= btn[1]) {
+            ans[1] += T/btn[1];
+            T %= btn[1];
+        } if (T >= btn[2]) {
+            ans[2] += T/btn[2];
+            T %= btn[2];
+        }
+        System.out.println(ans[0] + " " + ans[1] + " " + ans[2]);
+    }
+}
+
        Problem 10610 30
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -1059,6 +1138,25 @@ public class Main {
             }
             System.out.println();
         }
+    }
+}
+
+       Problem 10797 10부제
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int d = sc.nextInt();
+        int[] car = new int[5];
+        int cnt = 0;
+        for (int i=0 ;i<5; i++) {
+            car[i] = sc.nextInt();
+            if (car[i] == d) {
+                cnt++;
+            }
+        }
+        System.out.println(cnt);
     }
 }
 
