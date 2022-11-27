@@ -215,6 +215,31 @@ public class Main {
     }
 }
 
+       Problem 1110 더하기 사이클
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int M = N;
+        int cnt = 0;
+
+        while (true) {
+            int a = M/10;
+            int b = M%10;
+            M = b*10 + (a+b)%10;
+            cnt ++;
+            if (N==M) {
+                break;
+            }
+        }
+        System.out.println(cnt);
+    }
+}
+
        Problem 1269 대칭 차집합
 import java.util.HashSet;
 import java.util.Scanner;
@@ -261,31 +286,6 @@ public class Main {
             result += list.get(i-1);
         }
         System.out.println(result);
-    }
-}
-
-       Problem 1110 더하기 사이클
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int M = N;
-        int cnt = 0;
-
-        while (true) {
-            int a = M/10;
-            int b = M%10;
-            M = b*10 + (a+b)%10;
-            cnt ++;
-            if (N==M) {
-                break;
-            }
-        }
-        System.out.println(cnt);
     }
 }
 
@@ -646,6 +646,36 @@ public class Main {
                 System.out.println("E");
             }
         }
+    }
+}
+
+       Problem 2563 색종이
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[][] board = new int[100][100];
+        int cnt = 0;
+        for (int i=0; i<N; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            for (int j=a; j<a+10; j++) {
+                for (int k=b; k<b+10; k++) {
+                    board[j][k] = 1;
+
+                }
+            }
+        }
+        for (int j=0; j<100; j++) {
+            for (int k=0; k<100; k++) {
+                if (board[j][k] == 1) {
+                    cnt++;
+                }
+            }
+        }
+        System.out.println(cnt);
     }
 }
 
